@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Data Model - Energy Efficiency ETL Documentation</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../css/fontawesome.min.css" rel="stylesheet"/>
+<link href="../css/brands.min.css" rel="stylesheet"/>
+<link href="../css/solid.min.css" rel="stylesheet"/>
+<link href="../css/v4-font-face.min.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" id="hljs-light" rel="stylesheet"/>
+<link disabled="" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" id="hljs-dark" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="..">Energy Efficiency ETL Documentation</a>
+<!-- Expander button -->
+<button aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar-collapse" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Home</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../index.html">Welcome to Energy Efficiency ETL Documentation</a>
+</li>
+<li>
+<a class="dropdown-item" href="../framework.html">Framework</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Configs</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../configs/hourly_generation_by_energy_source.html">Hourly Generation</a>
+</li>
+<li>
+<a class="dropdown-item" href="../configs/electricity_sales_to_customers.html">Electricity Sales</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Fetch</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../fetch/provider/EIA.html">EIA</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Ingest</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../ingest/provider/xata.html">XATA</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../main.html">Main Logic</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../utils.html">Utilities</a>
+</li>
+<li class="nav-item">
+<a aria-current="page" class="nav-link active" href="model.html">Data Model</a>
+</li>
+</ul>
+<ul class="nav navbar-nav ms-md-auto">
+<li class="nav-item">
+<a class="nav-link" data-bs-target="#mkdocs_search_modal" data-bs-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../utils.html" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-bs-target="#toc-collapse" data-bs-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-body-tertiary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="1"><a class="nav-link" href="#data-models-documentation">Data Models Documentation</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#hourly-generation-by-energy-source">Hourly Generation by Energy Source</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#electricity-sales-to-customers">Electricity Sales to Customers</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#ba-region-mapping-table">BA Region Mapping Table</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#state-region-mapping-table">State Region Mapping Table</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#hourly-generation-by-energy-source-daily-interval-table">Hourly generation by energy source daily interval Table</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#electricity-sales-to-customers-monthly-table">Electricity Sales to customers Monthly Table</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#generation-consumption-by-region-table">Generation Consumption by Region Table</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#relationships-between-tables">Relationships Between Tables</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#usage-notes">Usage Notes</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#data-model-overview">Data Model Overview</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="data-models-documentation">Data Models Documentation</h1>
+<p>This documentation provides details about the data models used to store and analyze electricity sales, balancing authorities, state-region mappings, and hourly energy generation data. The models allow users to understand energy production, consumption, pricing, and regional efficiency on both macro and granular levels, supporting insights into electricity distribution, demand, and financial metrics.</p>
+<p>The key data models include:</p>
+<ul>
+<li><strong>Balancing Authorities and Regions</strong>: The mapping between balancing authorities (BA) and geographical regions, along with state-region associations, is captured in the <code>BA_region_mapping</code> and <code>state_region_mapping</code> tables.</li>
+<li><strong>Electricity Sales and Customer Metrics</strong>: The <code>electricity_sale_to_cust_month</code> table contains data on monthly electricity sales, customer counts, and financial information by region, state, and sector.</li>
+<li><strong>Hourly Energy Generation</strong>: The <code>hourly_generation_by_energy_source_daily_interval</code> table provides detailed hourly generation data by energy source (e.g., wind, solar) on a daily basis, allowing for deeper analysis of generation patterns and energy source contributions.</li>
+<li><strong>Generation and Consumption Efficiency</strong>: The <code>generation_consumption_by_region</code> table tracks the amount of electricity generated and consumed in each region, along with efficiency metrics that help assess how well energy generation matches consumption.</li>
+</ul>
+<hr/>
+<h2 id="hourly-generation-by-energy-source">Hourly Generation by Energy Source</h2>
+<p>The <code>hourly_generation_by_energy_source-raw</code> table provides data on electricity generation for each hour, broken down by fuel type and generation entity.</p>
+<table>
+<thead>
+<tr>
+<th>Column Name</th>
+<th>Units</th>
+<th>Data Type</th>
+<th>Sample</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>period</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>2024-01-01T00</code></td>
+<td>The timestamp of the data point (ISO 8601 format).</td>
+</tr>
+<tr>
+<td><code>respondent</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>AECI</code></td>
+<td>The entity generating the electricity.</td>
+</tr>
+<tr>
+<td><code>respondent_name</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>Associated Electric Cooperative,Inc.</code></td>
+<td>The full name of the respondent organization.</td>
+</tr>
+<tr>
+<td><code>fueltype</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>WND</code></td>
+<td>The type of fuel used to generate electricity (abbreviation).</td>
+</tr>
+<tr>
+<td><code>type_name</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>Wind</code></td>
+<td>The complete name of the fuel type.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>megawatt-hours</td>
+<td>String</td>
+<td><code>900</code></td>
+<td>The amount of electricity generated during that hour (in MWh).</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="electricity-sales-to-customers">Electricity Sales to Customers</h2>
+<p>The <code>electricity_sale_to_customer_raw</code> table provides data on electricity sales to customers by state and sector for a specific period. This includes customer counts, average price, and revenue data.</p>
+<table>
+<thead>
+<tr>
+<th>Column Name</th>
+<th>Units</th>
+<th>Data Type</th>
+<th>Sample</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>period</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>2024-07</code></td>
+<td>The month and year the data pertains to.</td>
+</tr>
+<tr>
+<td><code>stateid</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>WV</code></td>
+<td>The identifier for the state reporting the data.</td>
+</tr>
+<tr>
+<td><code>stateDescription</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>West Virginia</code></td>
+<td>The full name of the state.</td>
+</tr>
+<tr>
+<td><code>sectorid</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>IND</code></td>
+<td>The identifier for the sector.</td>
+</tr>
+<tr>
+<td><code>sectorName</code></td>
+<td>String</td>
+<td>String</td>
+<td><code>industrial</code></td>
+<td>The name of the sector to which the data pertains.</td>
+</tr>
+<tr>
+<td><code>customers</code></td>
+<td>number of customers</td>
+<td>Integer</td>
+<td><code>10944</code></td>
+<td>The number of customers in that sector for that state.</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>cents per kilowatt-hour</td>
+<td>Float</td>
+<td><code>7.73</code></td>
+<td>The average price per kilowatt-hour in cents.</td>
+</tr>
+<tr>
+<td><code>revenue</code></td>
+<td>million dollars</td>
+<td>Float</td>
+<td><code>96.59317</code></td>
+<td>The total revenue generated in millions of dollars.</td>
+</tr>
+<tr>
+<td><code>sales</code></td>
+<td>million kilowatt hours</td>
+<td>Float</td>
+<td><code>96.59317</code></td>
+<td>The total electricity sales in million kilowatt-hours.</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="ba-region-mapping-table">BA Region Mapping Table</h2>
+<p>The <code>BA_region_mapping</code> table maps a Balancing Authority (BA) to its corresponding geographic region.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column Name</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Sample</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BA_code</strong></td>
+<td>String</td>
+<td>AECI</td>
+<td>Unique identifier for a Balancing Authority.</td>
+</tr>
+<tr>
+<td><strong>BA_name</strong></td>
+<td>String</td>
+<td>Associated Electric Cooperative, Inc.</td>
+<td>Full name of the Balancing Authority corresponding to the <code>BA_code</code>.</td>
+</tr>
+<tr>
+<td><strong>region_code</strong></td>
+<td>String</td>
+<td>MIDW</td>
+<td>Unique identifier for the geographic region associated with the balancing authority.</td>
+</tr>
+<tr>
+<td><strong>region_name</strong></td>
+<td>String</td>
+<td>Midwest</td>
+<td>Full name of the geographic region linked to the <code>region_code</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><br/></p>
+<h2 id="state-region-mapping-table">State Region Mapping Table</h2>
+<p>The <code>state_region_mapping</code> table links U.S. states to their respective geographic regions using region codes.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column Name</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Sample</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Region</strong></td>
+<td>String</td>
+<td>Northwest</td>
+<td>Geographical area within the United States.</td>
+</tr>
+<tr>
+<td><strong>Region_ID</strong></td>
+<td>String</td>
+<td>NW</td>
+<td>Two-letter abbreviation representing the region.</td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td>String</td>
+<td>Idaho</td>
+<td>Name of a U.S. state.</td>
+</tr>
+<tr>
+<td><strong>State_ID</strong></td>
+<td>String</td>
+<td>ID</td>
+<td>Two-letter abbreviation representing the state.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><br/></p>
+<h2 id="hourly-generation-by-energy-source-daily-interval-table">Hourly generation by energy source daily interval Table</h2>
+<p>The <code>hourly_generation_by_energy_source_daily_interval</code> table provides hourly generation data for various energy sources on a daily basis.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column Name</strong></th>
+<th><strong>Units</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Sample</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>balancing_authority</strong></td>
+<td>String</td>
+<td>String</td>
+<td>Associated Electric Cooperative, Inc.</td>
+<td>The full name of the respondent organization.</td>
+</tr>
+<tr>
+<td><strong>balancing_authority_code</strong></td>
+<td>String</td>
+<td>String</td>
+<td>AECI</td>
+<td>A unique code that identifies the balancing authority.</td>
+</tr>
+<tr>
+<td><strong>energy_source</strong></td>
+<td>String</td>
+<td>String</td>
+<td>Wind</td>
+<td>The type of energy being measured or reported.</td>
+</tr>
+<tr>
+<td><strong>energy_source_code</strong></td>
+<td>String</td>
+<td>String</td>
+<td>WND</td>
+<td>A unique code that identifies the specific energy source.</td>
+</tr>
+<tr>
+<td><strong>region_name</strong></td>
+<td>Megawatt-hours</td>
+<td>String</td>
+<td>Midwest</td>
+<td>The name of the geographical region where the energy is generated.</td>
+</tr>
+<tr>
+<td><strong>region_code</strong></td>
+<td>String</td>
+<td>String</td>
+<td>MW</td>
+<td>A unique code representing the region.</td>
+</tr>
+<tr>
+<td><strong>measurement_date</strong></td>
+<td>Date</td>
+<td>Date</td>
+<td>1/1/2019</td>
+<td>The date on which the energy measurements were taken.</td>
+</tr>
+<tr>
+<td><strong>hour_ending_01</strong></td>
+<td>Megawatt-hours</td>
+<td>Integer</td>
+<td>100</td>
+<td>The amount of energy generated at the end of the first hour of the day.</td>
+</tr>
+<tr>
+<td><strong>hour_ending_02</strong></td>
+<td>Megawatt-hours</td>
+<td>Integer</td>
+<td>150</td>
+<td>The amount of energy generated at the end of the second hour of the day.</td>
+</tr>
+<tr>
+<td><strong>hour_ending_03</strong></td>
+<td>Megawatt-hours</td>
+<td>Integer</td>
+<td>200</td>
+<td>The amount of energy generated at the end of the third hour of the day.</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td><strong>hour_ending_24</strong></td>
+<td>Megawatt-hours</td>
+<td>Integer</td>
+<td>900</td>
+<td>The amount of energy generated at the end of the last hour of the day.</td>
+</tr>
+<tr>
+<td><strong>daily</strong></td>
+<td>Megawatt-hours</td>
+<td>Float</td>
+<td>1000</td>
+<td>The total amount of energy generated over the entire day.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><br/></p>
+<h2 id="electricity-sales-to-customers-monthly-table">Electricity Sales to customers Monthly Table</h2>
+<p>The <code>electricity_sale_to_cust_month</code> table records monthly electricity sales, customer counts, and financial details for different sectors in various U.S. regions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column Name</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Sample</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>period</strong></td>
+<td>String (monthly)</td>
+<td>2024-07</td>
+<td>Monthly reporting period.</td>
+</tr>
+<tr>
+<td><strong>region</strong></td>
+<td>String</td>
+<td>Mid-Atlantic</td>
+<td>Geographical area.</td>
+</tr>
+<tr>
+<td><strong>region_id</strong></td>
+<td>String</td>
+<td>MA</td>
+<td>Identifier for the region.</td>
+</tr>
+<tr>
+<td><strong>stateid</strong></td>
+<td>String</td>
+<td>WV</td>
+<td>Unique identifier for the state.</td>
+</tr>
+<tr>
+<td><strong>stateDescription</strong></td>
+<td>String</td>
+<td>West Virginia</td>
+<td>Name of the state.</td>
+</tr>
+<tr>
+<td><strong>sectorid</strong></td>
+<td>String</td>
+<td>IND</td>
+<td>Identifier for the sector (e.g., industrial, residential).</td>
+</tr>
+<tr>
+<td><strong>sectorName</strong></td>
+<td>String</td>
+<td>industrial</td>
+<td>Name of the sector.</td>
+</tr>
+<tr>
+<td><strong>customers</strong></td>
+<td>Integer</td>
+<td>10944</td>
+<td>Total number of customers served.</td>
+</tr>
+<tr>
+<td><strong>price</strong></td>
+<td>Float (cents per MWh)</td>
+<td>7730</td>
+<td>Energy price in cents per megawatt-hour (c/MWh).</td>
+</tr>
+<tr>
+<td><strong>revenue</strong></td>
+<td>Float (million dollars)</td>
+<td>96.59317</td>
+<td>Total revenue in million dollars.</td>
+</tr>
+<tr>
+<td><strong>consumption</strong></td>
+<td>Float (MWh)</td>
+<td>1250022.58</td>
+<td>Total energy consumption in megawatt-hours (MWh).</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><br/></p>
+<h2 id="generation-consumption-by-region-table">Generation Consumption by Region Table</h2>
+<p>The <code>generation_consumption_by_region</code> table tracks electricity generation, consumption, and efficiency metrics for various regions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column Name</strong></th>
+<th><strong>Units</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Sample</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>region_name</strong></td>
+<td>String</td>
+<td>String</td>
+<td>Central</td>
+<td>Name of the geographic region.</td>
+</tr>
+<tr>
+<td><strong>region_code</strong></td>
+<td>String</td>
+<td>String</td>
+<td>CN</td>
+<td>Unique identifier for the region.</td>
+</tr>
+<tr>
+<td><strong>period</strong></td>
+<td>Timestamp</td>
+<td>Timestamp</td>
+<td>2024-07</td>
+<td>Time period for the data entry.</td>
+</tr>
+<tr>
+<td><strong>generation</strong></td>
+<td>Megawatt-hours (MWh)</td>
+<td>Float</td>
+<td>28511431</td>
+<td>Amount of electricity generated in megawatt-hours.</td>
+</tr>
+<tr>
+<td><strong>consumption</strong></td>
+<td>Megawatt-hours (MWh)</td>
+<td>Float</td>
+<td>18877614.73</td>
+<td>Amount of electricity consumed in megawatt-hours.</td>
+</tr>
+<tr>
+<td><strong>efficiency</strong></td>
+<td>Percentage</td>
+<td>Float</td>
+<td>0.662107</td>
+<td>Ratio of consumption to generation.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="relationships-between-tables">Relationships Between Tables</h2>
+<ul>
+<li><strong>BA_region_mapping</strong> connects a Balancing Authority (<code>BA_code</code>) to a geographic region (<code>region_code</code>).</li>
+<li><strong>state_region_mapping</strong> defines the relationship between U.S. states and geographic regions (<code>Region_ID</code>).</li>
+<li><strong>electricity_sale_to_cust_month</strong> records energy sales data for different regions, states, and sectors, with detailed metrics such as revenue, price, and consumption.</li>
+<li><strong>hourly_generation_by_energy_source_daily_interval</strong> provides detailed hourly generation data for various energy sources on a daily basis, with each record representing a specific day of energy generation for a particular balancing authority and energy source.</li>
+<li><strong>generation_consumption_by_region</strong> tracks electricity generation, consumption, and efficiency at the regional level over specific periods.</li>
+</ul>
+<hr/>
+<h2 id="usage-notes">Usage Notes</h2>
+<ul>
+<li>The <strong>hourly_generation_by_energy_source_daily_interval</strong> table provides high-resolution data on hourly generation, which can be used to analyze daily energy trends and patterns.</li>
+<li>The <strong>generation_consumption_by_region</strong> table is useful for understanding the overall efficiency and energy balance in each region, comparing the amount of energy generated versus the amount consumed.</li>
+<li>The <strong>efficiency</strong> field in <code>generation_consumption_by_region</code> is a key metric that helps analyze how much of the generated energy is being consumed in a region.</li>
+</ul>
+<hr/>
+<h2 id="data-model-overview">Data Model Overview</h2>
+<p>The following diagram illustrates the relationship between electricity generation and consumption.</p>
+<div class="mermaid">
+erDiagram
+    BA_region_mapping {
+        string BA_code "Unique identifier for a Balancing Authority"
+        string BA_name "Full name of the Balancing Authority"
+        string region_code "Unique identifier for the geographic region"
+        string region_name "Full name of the geographic region"
+    }
+
+    state_region_mapping {
+        string Region "Geographical area within the United States"
+        string Region_ID "Two-letter abbreviation representing the region"
+        string State "Name of a U.S. state"
+        string State_ID "Two-letter abbreviation representing the state"
+    }
+
+    electricity_sale_to_customer_raw {
+        string period "Month and year the data pertains to"
+        string stateid "Unique identifier for the state"
+        string stateDescription "Full name of the state"
+        string sectorid "Identifier for the sector"
+        string sectorName "Name of the sector"
+        int customers "Total number of customers served"
+        float price "Average price per kilowatt-hour in cents"
+        float revenue "Total revenue (in million dollars)"
+        float sales "Total electricity sales (in million kWh)"
+    }
+
+    hourly_generation_by_energy_source {
+        string period "Timestamp of the data point (ISO 8601)"
+        string respondent "Entity generating the electricity"
+        string respondent_name "Full name of the respondent organization"
+        string fueltype "Fuel type used to generate electricity"
+        string type_name "Complete name of the fuel type"
+        float value "Amount of electricity generated (MWh)"
+    }
+
+    electricity_sale_to_cust_month {
+        string period "Monthly reporting period"
+        string region "Geographical area"
+        string region_id "Identifier for the region"
+        string stateid "Unique identifier for the state"
+        string stateDescription "Full name of the state"
+        string sectorid "Identifier for the sector"
+        string sectorName "Name of the sector"
+        int customers "Total number of customers served"
+        float price "Energy price (c/MWh)"
+        float revenue "Total revenue"
+        float consumption "Total energy consumption"
+    }
+
+    hourly_generation_by_energy_source_daily_interval {
+        string balancing_authority "Full name of the respondent organization"
+        string balancing_authority_code "Unique code identifying the balancing authority"
+        string energy_source "Type of energy being measured"
+        string energy_source_code "Code identifying the energy source"
+        string region_name "Name of the geographical region"
+        string region_code "Unique region identifier"
+        date measurement_date "Date of energy measurements"
+        int hour_ending_01 "Energy generated at the end of hour 1"
+        int hour_ending_02 "Energy generated at the end of hour 2"
+        int hour_ending_24 "Energy generated at the end of hour 24"
+        float daily "Total energy generated in the day"
+    }
+
+    generation_consumption_by_region {
+        string region_name "Name of the geographic region"
+        string region_code "Unique identifier for the region"
+        timestamp period "Time period for the data entry"
+        float generation "Electricity generation in MWh"
+        float consumption "Electricity consumption in MWh"
+        float efficiency "Ratio of consumption to generation"
+    }
+
+    %% Relationships
+    state_region_mapping ||--o| electricity_sale_to_customer_raw : "Maps state-region to raw sales data"
+    BA_region_mapping ||--o| hourly_generation_by_energy_source : "Maps BA to hourly generation"
+    hourly_generation_by_energy_source ||--o| hourly_generation_by_energy_source_daily_interval : "Aggregates hourly generation data to daily"
+    hourly_generation_by_energy_source_daily_interval ||--o| generation_consumption_by_region : "Joins hourly generation with consumption data"
+    electricity_sale_to_customer_raw ||--o| electricity_sale_to_cust_month : "Transforms raw sales data into monthly sales data"
+    electricity_sale_to_cust_month ||--o| generation_consumption_by_region : "Joins sales data with generation and consumption data"
+
+
+</div></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../js/base.js"></script>
+<script src="../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
