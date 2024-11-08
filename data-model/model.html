@@ -156,7 +156,7 @@
 </div>
 </div></div>
 <div class="col-md-9" role="main">
-<h1 id="data-models-documentation">Data Models Documentation</h1>
+<h1 id="data-models-documentation"><strong>Data Models Documentation</strong></h1>
 <p>This documentation provides details about the data models used to store and analyze electricity sales, balancing authorities, state-region mappings, and hourly energy generation data. The models allow users to understand energy production, consumption, pricing, and regional efficiency on both macro and granular levels, supporting insights into electricity distribution, demand, and financial metrics.</p>
 <p>The key data models include:</p>
 <ul>
@@ -166,7 +166,7 @@
 <li><strong>Generation and Consumption Efficiency</strong>: The <code>generation_consumption_by_region</code> table tracks the amount of electricity generated and consumed in each region, along with efficiency metrics that help assess how well energy generation matches consumption.</li>
 </ul>
 <hr/>
-<h2 id="hourly-generation-by-energy-source">Hourly Generation by Energy Source</h2>
+<h2 id="hourly-generation-by-energy-source"><strong>Hourly Generation by Energy Source</strong></h2>
 <p>The <code>hourly_generation_by_energy_source-raw</code> table provides data on electricity generation for each hour, broken down by fuel type and generation entity.</p>
 <table>
 <thead>
@@ -224,7 +224,8 @@
 </tbody>
 </table>
 <p><br/></p>
-<h2 id="electricity-sales-to-customers">Electricity Sales to Customers</h2>
+<hr/>
+<h2 id="electricity-sales-to-customers"><strong>Electricity Sales to Customers</strong></h2>
 <p>The <code>electricity_sale_to_customer_raw</code> table provides data on electricity sales to customers by state and sector for a specific period. This includes customer counts, average price, and revenue data.</p>
 <table>
 <thead>
@@ -303,7 +304,8 @@
 </tbody>
 </table>
 <p><br/></p>
-<h2 id="ba-region-mapping-table">BA Region Mapping Table</h2>
+<hr/>
+<h2 id="ba-region-mapping-table"><strong>BA Region Mapping Table</strong></h2>
 <p>The <code>BA_region_mapping</code> table maps a Balancing Authority (BA) to its corresponding geographic region.</p>
 <table>
 <thead>
@@ -341,9 +343,9 @@
 </tr>
 </tbody>
 </table>
-<hr/>
 <p><br/></p>
-<h2 id="state-region-mapping-table">State Region Mapping Table</h2>
+<hr/>
+<h2 id="state-region-mapping-table"><strong>State Region Mapping Table</strong></h2>
 <p>The <code>state_region_mapping</code> table links U.S. states to their respective geographic regions using region codes.</p>
 <table>
 <thead>
@@ -381,9 +383,9 @@
 </tr>
 </tbody>
 </table>
-<hr/>
 <p><br/></p>
-<h2 id="hourly-generation-by-energy-source-daily-interval-table">Hourly generation by energy source daily interval Table</h2>
+<hr/>
+<h2 id="hourly-generation-by-energy-source-daily-interval-table"><strong>Hourly generation by energy source daily interval Table</strong></h2>
 <p>The <code>hourly_generation_by_energy_source_daily_interval</code> table provides hourly generation data for various energy sources on a daily basis.</p>
 <table>
 <thead>
@@ -489,9 +491,9 @@
 </tr>
 </tbody>
 </table>
-<hr/>
 <p><br/></p>
-<h2 id="electricity-sales-to-customers-monthly-table">Electricity Sales to customers Monthly Table</h2>
+<hr/>
+<h2 id="electricity-sales-to-customers-monthly-table"><strong>Electricity Sales to customers Monthly Table</strong></h2>
 <p>The <code>electricity_sale_to_cust_month</code> table records monthly electricity sales, customer counts, and financial details for different sectors in various U.S. regions.</p>
 <table>
 <thead>
@@ -571,9 +573,9 @@
 </tr>
 </tbody>
 </table>
-<hr/>
 <p><br/></p>
-<h2 id="generation-consumption-by-region-table">Generation Consumption by Region Table</h2>
+<hr/>
+<h2 id="generation-consumption-by-region-table"><strong>Generation Consumption by Region Table</strong></h2>
 <p>The <code>generation_consumption_by_region</code> table tracks electricity generation, consumption, and efficiency metrics for various regions.</p>
 <table>
 <thead>
@@ -630,8 +632,9 @@
 </tr>
 </tbody>
 </table>
+<p><br/></p>
 <hr/>
-<h2 id="relationships-between-tables">Relationships Between Tables</h2>
+<h2 id="relationships-between-tables"><strong>Relationships Between Tables</strong></h2>
 <ul>
 <li><strong>BA_region_mapping</strong> connects a Balancing Authority (<code>BA_code</code>) to a geographic region (<code>region_code</code>).</li>
 <li><strong>state_region_mapping</strong> defines the relationship between U.S. states and geographic regions (<code>Region_ID</code>).</li>
@@ -640,14 +643,14 @@
 <li><strong>generation_consumption_by_region</strong> tracks electricity generation, consumption, and efficiency at the regional level over specific periods.</li>
 </ul>
 <hr/>
-<h2 id="usage-notes">Usage Notes</h2>
+<h2 id="usage-notes"><strong>Usage Notes</strong></h2>
 <ul>
 <li>The <strong>hourly_generation_by_energy_source_daily_interval</strong> table provides high-resolution data on hourly generation, which can be used to analyze daily energy trends and patterns.</li>
 <li>The <strong>generation_consumption_by_region</strong> table is useful for understanding the overall efficiency and energy balance in each region, comparing the amount of energy generated versus the amount consumed.</li>
 <li>The <strong>efficiency</strong> field in <code>generation_consumption_by_region</code> is a key metric that helps analyze how much of the generated energy is being consumed in a region.</li>
 </ul>
 <hr/>
-<h2 id="data-model-overview">Data Model Overview</h2>
+<h2 id="data-model-overview"><strong>Data Model Overview</strong></h2>
 <p>The following diagram illustrates the relationship between electricity generation and consumption.</p>
 <div class="mermaid">
 erDiagram

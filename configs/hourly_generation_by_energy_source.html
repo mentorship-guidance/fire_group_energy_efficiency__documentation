@@ -144,10 +144,10 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="hourly-generation-by-energy-source-configuration">Hourly Generation by Energy Source Configuration</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="hourly-generation-by-energy-source-configuration"><strong>Hourly Generation by Energy Source Configuration</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
 <p>This configuration file is used to fetch hourly generation data by energy source from the EIA API. It contains details about the data provider, API endpoint, parameters for the API request, and rules for data transformation before ingestion into the Xata database.</p>
-<h2 id="configuration-structure">Configuration Structure</h2>
+<h2 id="configuration-structure"><strong>Configuration Structure</strong></h2>
 <h4 id="providers"><strong>Providers</strong></h4>
 <p>The <code>providers</code> section contains all the necessary information to access the provider API.</p>
 <ul>
@@ -257,7 +257,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="ingest">Ingest</h3>
+<h3 id="ingest"><strong>Ingest</strong></h3>
 <p>The <code>ingest</code> section defines where the fetched data will be stored.</p>
 <ul>
 <li><strong>target</strong>: </li>
@@ -273,7 +273,7 @@
 <li><strong>Description</strong>: The name of the table in the target database where the data will be stored.</li>
 <li><strong>Example</strong>: <code>"test"</code> indicates the name of the table.</li>
 </ul>
-<h3 id="rules">Rules</h3>
+<h3 id="rules"><strong>Rules</strong></h3>
 <p>The <code>rules</code> section contains transformation rules for the data before ingestion.</p>
 <ul>
 <li><strong>symbol_replacement</strong>: </li>
@@ -313,9 +313,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>This configuration file is essential for retrieving, transforming, and ingesting hourly generation data by energy source from the EIA API into the Xata database.
-```</p></div>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>This configuration file is essential for retrieving, transforming, and ingesting hourly generation data by energy source from the EIA API into the Xata database. The transformation rules ensure that the data is clean and consistent before ingestion.</p></div>
             </div>
         </div>
 

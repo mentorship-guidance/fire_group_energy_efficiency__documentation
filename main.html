@@ -140,13 +140,13 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="main-logic-documentation">Main Logic Documentation</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="main-logic-documentation"><strong>Main Logic Documentation</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
 <p>The main.py module orchestrates the entire data processing pipeline for the Energy Efficiency ETL project. It is responsible for loading configuration parameters, fetching data from specified providers, preprocessing the data, and ultimately ingesting it into the target database.</p>
-<h3 id="method-run_pipelineconfig_path">Method: run_pipeline(config_path)</h3>
+<h3 id="method-run_pipelineconfig_path"><strong>Method: run_pipeline(config_path)</strong></h3>
 <p>This is the main function that coordinates the execution of the ETL process.</p>
 <p>Here’s a detailed explanation of the steps involved in the <code>main.py</code> logic, along with a flow chart that illustrates the function invocation process for the Energy Efficiency ETL pipeline.</p>
-<h4 id="steps-involved">Steps Involved</h4>
+<h4 id="steps-involved"><strong>Steps Involved</strong></h4>
 <p><code>1.</code> <strong>Load Configuration Parameters</strong>
       - The <code>ConfigParamsLoader</code> class is instantiated with the provided <code>config_path</code>.
       - Configuration parameters are loaded from the specified JSON file.
@@ -178,7 +178,7 @@
    ingest_manager.ingest_data(df, target)</code></p>
 <p><code>5.</code> <strong>Completion</strong>
       - The pipeline completes, and a message is printed to indicate that all processes have been executed successfully.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
 <p>The <code>main.py</code> file serves as the backbone i.e the brain of the ETL process, guiding the flow from configuration loading to data ingestion. Each step is modular, allowing for easy modifications or extensions of the pipeline in the future. The detailed workflow ensures that the data is efficiently and accurately processed from source to target.</p></div>
             </div>
         </div>

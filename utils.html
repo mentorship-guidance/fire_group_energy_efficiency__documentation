@@ -129,6 +129,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#classes" class="nav-link">Classes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
               <ul class="nav flex-column">
               </ul>
@@ -140,177 +144,119 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="utilities-documentation">Utilities Documentation</h1>
-<h2 id="overview">Overview</h2>
-<p>The <code>utils.py</code> module contains utility classes that assist in loading configuration parameters and handling data preprocessing rules. This module plays a crucial role in ensuring that the ETL pipeline can read and manipulate configuration files effectively.</p>
-<h3 id="classes">Classes</h3>
-<h4 id="1-configparamsloader">1. ConfigParamsLoader</h4>
-<p>The <code>ConfigParamsLoader</code> class is responsible for loading and retrieving configuration parameters from a specified JSON file. This includes details about data providers, ingestion targets, and rules for data processing.</p>
-<h5 id="initialization">Initialization</h5>
+<h1 id="utilities-documentation"><strong>Utilities Documentation</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>The <code>utils.py</code> module provides a set of utility classes that play a pivotal role in the ETL (Extract, Transform, Load) pipeline. It includes functionality to load configuration parameters, apply data preprocessing rules, and facilitate the smooth ingestion of cleaned data. The module ensures that the pipeline can effectively read configuration files and process data according to defined rules, making the overall process more efficient and maintainable.</p>
+<hr />
+<h2 id="classes"><strong>Classes</strong></h2>
+<h3 id="1-configparamsloader">1. <strong>ConfigParamsLoader</strong></h3>
+<p>The <code>ConfigParamsLoader</code> class is responsible for loading and managing configuration parameters from a JSON configuration file. These parameters include details about data providers, ingestion targets, and data processing rules.</p>
+<h4 id="initialization"><strong>Initialization</strong></h4>
 <pre><code class="language-python">def __init__(self, config_path: str):
 </code></pre>
 <ul>
-<li><strong>Parameters:</strong></li>
-<li>
-<p><code>config_path</code> (str): The path to the JSON configuration file.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Initializes the <code>ConfigParamsLoader</code> instance with the specified configuration path, allowing subsequent methods to access the configuration data.</p>
-</li>
+<li><strong>Parameters</strong>:</li>
+<li><code>config_path</code> (<code>str</code>): The path to the JSON configuration file.</li>
+<li><strong>Description</strong>: Initializes the <code>ConfigParamsLoader</code> instance with the provided configuration file path. This allows subsequent methods to access and load the configuration parameters.</li>
 </ul>
-<h5 id="method-_load_config">Method: _load_config()</h5>
+<h4 id="methods"><strong>Methods</strong></h4>
+<h5 id="_load_config"><strong>_load_config()</strong></h5>
 <pre><code class="language-python">def _load_config(self):
 </code></pre>
 <ul>
-<li><strong>Returns:</strong></li>
-<li>
-<p><code>dict</code>: The contents of the JSON configuration file.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Loads the JSON configuration file and returns it as a Python dictionary. This internal method is used by other methods to access configuration values.</p>
-</li>
+<li><strong>Returns</strong>:</li>
+<li><code>dict</code>: The contents of the JSON configuration file.</li>
+<li><strong>Description</strong>: This internal method loads the configuration file and returns its contents as a Python dictionary. It is used by other methods to access configuration values.</li>
 </ul>
-<h5 id="method-get_provider_name">Method: get_provider_name()</h5>
+<h5 id="get_provider_name"><strong>get_provider_name()</strong></h5>
 <pre><code class="language-python">def get_provider_name(self):
 </code></pre>
 <ul>
-<li><strong>Returns:</strong></li>
-<li>
-<p><code>str</code>: The provider name specified in the configuration.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Retrieves the provider name from the configuration, allowing the ETL pipeline to know which data source to use for fetching data.</p>
-</li>
+<li><strong>Returns</strong>:</li>
+<li><code>str</code>: The name of the data provider specified in the configuration.</li>
+<li><strong>Description</strong>: Retrieves the provider name (e.g., <code>"EIA"</code>) from the configuration. This informs the ETL pipeline about which data source to use for fetching the data.</li>
 </ul>
-<h5 id="method-get_target">Method: get_target()</h5>
+<h5 id="get_target"><strong>get_target()</strong></h5>
 <pre><code class="language-python">def get_target(self):
 </code></pre>
 <ul>
-<li><strong>Returns:</strong></li>
-<li>
-<p><code>str</code>: The target specified in the config for data ingestion.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Fetches the target for data ingestion, which helps in directing the processed data to the appropriate database or storage solution.</p>
-</li>
+<li><strong>Returns</strong>:</li>
+<li><code>str</code>: The target for data ingestion specified in the configuration (e.g., <code>"Xata"</code>).</li>
+<li><strong>Description</strong>: Fetches the target database or storage solution where the processed data will be ingested.</li>
 </ul>
 <hr />
-<h4 id="2-loadrule">2. LoadRule</h4>
-<p>The <code>LoadRule</code> class is responsible for loading and managing rules related to data preprocessing. This includes symbol replacements and null value replacements as defined in the configuration.</p>
-<h5 id="initialization_1">Initialization</h5>
+<h3 id="2-loadrule">2. <strong>LoadRule</strong></h3>
+<p>The <code>LoadRule</code> class is responsible for loading and managing rules related to data preprocessing. This includes symbol replacement and handling null values as defined in the configuration file.</p>
+<h4 id="initialization_1"><strong>Initialization</strong></h4>
 <pre><code class="language-python">def __init__(self, config_path: str):
 </code></pre>
 <ul>
-<li><strong>Parameters:</strong></li>
-<li>
-<p><code>config_path</code> (str): The path to the JSON configuration file.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Initializes the <code>LoadRule</code> instance with the configuration path, enabling the loading of preprocessing rules from the configuration.</p>
-</li>
+<li><strong>Parameters</strong>:</li>
+<li><code>config_path</code> (<code>str</code>): The path to the JSON configuration file containing the data processing rules.</li>
+<li><strong>Description</strong>: Initializes the <code>LoadRule</code> instance, enabling the class to read and load preprocessing rules from the specified configuration.</li>
 </ul>
-<h5 id="method-_load_config_1">Method: _load_config()</h5>
+<h4 id="methods_1"><strong>Methods</strong></h4>
+<h5 id="_load_config_1"><strong>_load_config()</strong></h5>
 <pre><code class="language-python">def _load_config(self):
 </code></pre>
 <ul>
-<li><strong>Returns:</strong></li>
-<li>
-<p><code>dict</code>: The contents of the JSON configuration file.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Loads the JSON configuration file similarly to <code>ConfigParamsLoader</code>, used to access the preprocessing rules.</p>
-</li>
+<li><strong>Returns</strong>:</li>
+<li><code>dict</code>: The contents of the JSON configuration file.</li>
+<li><strong>Description</strong>: Loads the JSON configuration file and returns it as a Python dictionary, used to access the rules for data preprocessing.</li>
 </ul>
-<h5 id="method-load_symbol_replacement">Method: load_symbol_replacement()</h5>
+<h5 id="load_symbol_replacement"><strong>load_symbol_replacement()</strong></h5>
 <pre><code class="language-python">def load_symbol_replacement(self):
 </code></pre>
 <ul>
-<li><strong>Returns:</strong></li>
-<li>
-<p><code>dict</code>: The symbol replacement rules specified in the configuration.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Retrieves the rules for symbol replacement from the configuration. This includes the symbols to be replaced and their corresponding replacements.</p>
-</li>
+<li><strong>Returns</strong>:</li>
+<li><code>dict</code>: The symbol replacement rules specified in the configuration.</li>
+<li><strong>Description</strong>: Retrieves the symbol replacement rules defined in the configuration. This includes a list of symbols to be replaced and their corresponding replacements (e.g., replacing <code>"-"</code> with <code>"_"</code>).</li>
 </ul>
-<h5 id="method-load_null_value_replacement">Method: load_null_value_replacement()</h5>
+<h5 id="load_null_value_replacement"><strong>load_null_value_replacement()</strong></h5>
 <pre><code class="language-python">def load_null_value_replacement(self):
 </code></pre>
 <ul>
-<li><strong>Returns:</strong></li>
-<li>
-<p><code>dict</code>: The null value replacement rules specified in the configuration.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Fetches the null value replacement rules from the configuration, specifying what value should be used to replace nulls in the data.</p>
-</li>
+<li><strong>Returns</strong>:</li>
+<li><code>dict</code>: The null value replacement rules specified in the configuration.</li>
+<li><strong>Description</strong>: Fetches the rules for replacing null values in the data. This typically specifies what value (e.g., <code>0</code>) should replace <code>null</code> or missing entries in the dataset.</li>
 </ul>
 <hr />
-<h4 id="3-datapreprocessor">3. DataPreprocessor</h4>
-<p>The <code>DataPreprocessor</code> class is responsible for applying preprocessing rules to the fetched data. This includes replacing specified symbols in column headers and filling null values in the DataFrame.</p>
-<h5 id="initialization_2">Initialization</h5>
+<h3 id="3-datapreprocessor">3. <strong>DataPreprocessor</strong></h3>
+<p>The <code>DataPreprocessor</code> class is responsible for applying the preprocessing rules to the fetched data. This includes replacing specified symbols in column headers and filling null values in the dataset.</p>
+<h4 id="initialization_2"><strong>Initialization</strong></h4>
 <pre><code class="language-python">def __init__(self, symbol_replacement, null_value_replacement):
 </code></pre>
 <ul>
-<li><strong>Parameters:</strong></li>
-<li><code>symbol_replacement</code> (dict): A dictionary containing symbol replacement rules.</li>
-<li>
-<p><code>null_value_replacement</code> (dict): A dictionary containing null value replacement rules.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Initializes the <code>DataPreprocessor</code> with the specified rules for symbol and null value replacements, setting up the instance for data cleaning operations.</p>
-</li>
+<li><strong>Parameters</strong>:</li>
+<li><code>symbol_replacement</code> (<code>dict</code>): A dictionary containing the symbol replacement rules.</li>
+<li><code>null_value_replacement</code> (<code>dict</code>): A dictionary containing the null value replacement rules.</li>
+<li><strong>Description</strong>: Initializes the <code>DataPreprocessor</code> with the necessary symbol and null value replacement rules. This setup ensures that the data cleaning operations will be applied as required.</li>
 </ul>
-<h5 id="method-replace_symbols">Method: replace_symbols()</h5>
+<h4 id="methods_2"><strong>Methods</strong></h4>
+<h5 id="replace_symbols"><strong>replace_symbols()</strong></h5>
 <pre><code class="language-python">def replace_symbols(self, df):
 </code></pre>
 <ul>
-<li><strong>Parameters:</strong></li>
-<li>
-<p><code>df</code> (pd.DataFrame): The DataFrame whose column headers will be modified.</p>
-</li>
-<li>
-<p><strong>Returns:</strong></p>
-</li>
-<li>
-<p><code>pd.DataFrame</code>: The DataFrame with modified column headers.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Iterates over the defined symbol replacement rules and applies them to the column headers of the provided DataFrame. Symbols specified in the rules are replaced with their designated replacements.</p>
-</li>
+<li><strong>Parameters</strong>:</li>
+<li><code>df</code> (<code>pd.DataFrame</code>): The DataFrame whose column headers will be modified.</li>
+<li><strong>Returns</strong>:</li>
+<li><code>pd.DataFrame</code>: The DataFrame with modified column headers.</li>
+<li><strong>Description</strong>: Iterates over the symbol replacement rules and applies them to the column headers of the provided DataFrame. This method ensures that symbols specified in the configuration (e.g., <code>"-"</code>, <code>"%"</code>, <code>"*"</code>) are replaced with the designated replacements (e.g., <code>"_"</code>).</li>
 </ul>
-<h5 id="method-replace_null">Method: replace_null()</h5>
+<h5 id="replace_null"><strong>replace_null()</strong></h5>
 <pre><code class="language-python">def replace_null(self, df):
 </code></pre>
 <ul>
-<li><strong>Parameters:</strong></li>
-<li>
-<p><code>df</code> (pd.DataFrame): The DataFrame in which null values will be replaced.</p>
-</li>
-<li>
-<p><strong>Returns:</strong></p>
-</li>
-<li>
-<p><code>pd.DataFrame</code>: The DataFrame with null values replaced.</p>
-</li>
-<li>
-<p><strong>Description:</strong>
-  Fills null values in the DataFrame with the specified replacement value. This ensures that the DataFrame does not contain any null entries before ingestion.</p>
-</li>
+<li><strong>Parameters</strong>:</li>
+<li><code>df</code> (<code>pd.DataFrame</code>): The DataFrame in which null values will be replaced.</li>
+<li><strong>Returns</strong>:</li>
+<li><code>pd.DataFrame</code>: The DataFrame with null values replaced.</li>
+<li><strong>Description</strong>: Fills null values in the DataFrame with the specified replacement value. This ensures that missing data is handled consistently before the data is ingested into the target system.</li>
 </ul>
 <hr />
-<h2 id="conclusion">Conclusion</h2>
-<p>The <code>utils.py</code> module provides essential utility functions that facilitate the smooth operation of the ETL pipeline. The <code>ConfigParamsLoader</code> allows for the easy loading of configuration parameters, while the <code>LoadRule</code> and <code>DataPreprocessor</code> classes enable effective data cleaning and preparation for ingestion. This modular approach ensures that the ETL process remains flexible and maintainable.</p></div>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>The <code>utils.py</code> module is a critical part of the ETL pipeline, providing utility classes that facilitate the loading of configuration parameters, managing data preprocessing rules, and applying those rules to data for ingestion. The modular design of the utilities ensures that the ETL process is highly flexible, maintainable, and scalable.</p>
+<p>By utilizing the <code>ConfigParamsLoader</code>, <code>LoadRule</code>, and <code>DataPreprocessor</code> classes, the pipeline can adapt to different data sources, ingestion targets, and data preprocessing rules, all while ensuring data consistency and quality before it is ingested into the target system.</p></div>
             </div>
         </div>
 

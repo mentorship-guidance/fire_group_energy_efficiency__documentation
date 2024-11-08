@@ -122,12 +122,202 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#monthly-retail-sales-data-configuration" class="nav-link">Monthly Retail Sales Data Configuration</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuration-structure" class="nav-link">Configuration Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="monthly-retail-sales-data-configuration"><strong>Monthly Retail Sales Data Configuration</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>This configuration file is used to fetch monthly retail sales data from the EIA API. It defines details about the data provider, API endpoint, request parameters, and data transformation rules before ingesting the data into the Xata database.</p>
+<h2 id="configuration-structure"><strong>Configuration Structure</strong></h2>
+<h3 id="providers"><strong>Providers</strong></h3>
+<p>The <code>providers</code> section contains all the necessary information to access the EIA API and specify the parameters for fetching retail sales data.</p>
+<ul>
+<li><strong>provider</strong>:</li>
+<li><strong>Type</strong>: <code>string</code></li>
+<li>
+<p><strong>Description</strong>: Specifies the data provider. In this case, it is set to <code>"EIA"</code>, the U.S. Energy Information Administration.</p>
+</li>
+<li>
+<p><strong>base_url</strong>:</p>
+</li>
+<li><strong>Type</strong>: <code>string</code></li>
+<li><strong>Description</strong>: The base URL for the EIA API endpoint where the retail sales data will be fetched from.</li>
+<li>
+<p><strong>Example</strong>: <code>https://api.eia.gov/v2/electricity/retail-sales/data/</code></p>
+</li>
+<li>
+<p><strong>params</strong>:</p>
+</li>
+<li><strong>Type</strong>: <code>object</code></li>
+<li><strong>Description</strong>: Contains various parameters for the API request.</li>
+</ul>
+<h4 id="params-details"><strong>Params Details</strong></h4>
+<ul>
+<li>
+<p><strong>frequency</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>string</code></li>
+<li><strong>Description</strong>: The frequency of the data. Here, it is set to <code>"monthly"</code>, indicating monthly retail sales data will be fetched.</li>
+</ul>
+</li>
+<li>
+<p><strong>data</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>array</code></li>
+<li><strong>Description</strong>: Specifies the fields of data to retrieve.</li>
+<li><strong>Example</strong>: <code>["customers", "price", "revenue", "sales"]</code>, which fetches the number of customers, price, revenue, and sales data.</li>
+</ul>
+</li>
+<li>
+<p><strong>facets</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>object</code></li>
+<li>
+<p><strong>Description</strong>: Contains filtering options for the data.</p>
+</li>
+<li>
+<p><strong>sectorid</strong>:</p>
+</li>
+<li><strong>Type</strong>: <code>array</code></li>
+<li><strong>Description</strong>: Specifies the sectors to filter the data by. The array includes sectors like <code>"ALL"</code>, <code>"COM"</code> (Commercial), <code>"RES"</code> (Residential), etc.</li>
+<li>
+<p><strong>Example</strong>: <code>["ALL", "COM", "IND", "RES", "TRA"]</code>.</p>
+</li>
+<li>
+<p><strong>stateid</strong>:</p>
+</li>
+<li><strong>Type</strong>: <code>array</code></li>
+<li><strong>Description</strong>: Specifies the states for which the data should be fetched. </li>
+<li><strong>Example</strong>: <code>["AK", "AL", "AR", "CA", "TX", "NY", "FL", ...]</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>start</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>string</code> or <code>null</code></li>
+<li><strong>Description</strong>: The start date for the data fetch. Setting this to <code>null</code> means data will be fetched from the beginning.</li>
+</ul>
+</li>
+<li>
+<p><strong>end</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>string</code> or <code>null</code></li>
+<li><strong>Description</strong>: The end date for the data fetch. Setting this to <code>null</code> means data will be fetched up to the current date.</li>
+</ul>
+</li>
+<li>
+<p><strong>sort</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>array</code></li>
+<li><strong>Description</strong>: Specifies the sorting order for the fetched data.</li>
+<li><strong>Example</strong>: 
+  <code>json
+  [
+      {"column": "customers", "direction": "asc"},
+      {"column": "period", "direction": "asc"},
+      {"column": "price", "direction": "asc"},
+      {"column": "revenue", "direction": "asc"},
+      {"column": "sales", "direction": "asc"},
+      {"column": "sectorid", "direction": "asc"},
+      {"column": "stateid", "direction": "asc"}
+  ]</code>
+  This indicates sorting by <code>customers</code>, <code>period</code>, <code>price</code>, <code>revenue</code>, <code>sales</code>, <code>sectorid</code>, and <code>stateid</code> in ascending order.</li>
+</ul>
+</li>
+<li>
+<p><strong>offset</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>integer</code></li>
+<li><strong>Description</strong>: The offset for pagination. It specifies the starting point for fetching records.</li>
+<li><strong>Example</strong>: <code>0</code> means to start fetching records from the beginning.</li>
+</ul>
+</li>
+<li>
+<p><strong>length</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>integer</code></li>
+<li><strong>Description</strong>: The maximum number of records to fetch in a single request.</li>
+<li><strong>Example</strong>: <code>5000</code> indicates that up to 5000 records will be fetched.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ingest"><strong>Ingest</strong></h3>
+<p>The <code>ingest</code> section defines the target for the data after it is fetched and processed.</p>
+<ul>
+<li><strong>target</strong>:</li>
+<li><strong>Type</strong>: <code>string</code></li>
+<li><strong>Description</strong>: Specifies where the data will be ingested.</li>
+<li>
+<p><strong>Example</strong>: <code>"Xata"</code> indicates that the data will be ingested into the Xata database.</p>
+</li>
+<li>
+<p><strong>table_name</strong>:</p>
+</li>
+<li><strong>Type</strong>: <code>string</code></li>
+<li><strong>Description</strong>: The name of the table in the target database where the data will be stored.</li>
+<li><strong>Example</strong>: <code>"electricity_sales_to_customer_raw"</code> specifies the table name.</li>
+</ul>
+<h3 id="rules"><strong>Rules</strong></h3>
+<p>The <code>rules</code> section defines any data transformations that should be applied before the data is ingested.</p>
+<ul>
+<li><strong>symbol_replacement</strong>:</li>
+<li><strong>Type</strong>: <code>object</code></li>
+<li>
+<p><strong>Description</strong>: Rules for replacing specific symbols or characters in the data.</p>
+</li>
+<li>
+<p><strong>replacements</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>array</code></li>
+<li><strong>Description</strong>: Specifies the symbols to replace and their replacements.</li>
+<li><strong>Example</strong>:
+  <code>json
+  [
+      {
+          "symbols": ["-", "%", "*"],
+          "replace_with": "_"
+      }
+  ]</code>
+  This indicates that all occurrences of the symbols <code>"-"</code>, <code>"%"</code>, and <code>"*"</code> will be replaced with underscores (<code>_</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>null_value_replacement</strong>:</p>
+</li>
+<li><strong>Type</strong>: <code>object</code></li>
+<li>
+<p><strong>Description</strong>: Specifies how to handle null values in the data.</p>
+</li>
+<li>
+<p><strong>replace_with</strong>:</p>
+<ul>
+<li><strong>Type</strong>: <code>integer</code></li>
+<li><strong>Description</strong>: The value to replace nulls with.</li>
+<li><strong>Example</strong>: <code>0</code> indicates that any null values will be replaced with <code>0</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>This configuration file provides the necessary structure for fetching, transforming, and ingesting monthly retail sales data by sector and state from the EIA API into the Xata database. The transformation rules ensure that the data is clean and consistent before ingestion.</p></div>
             </div>
         </div>
 
