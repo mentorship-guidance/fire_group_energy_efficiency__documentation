@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Electricity Consumption - Energy Efficiency ETL Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Energy Efficiency ETL Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Home</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../index.html" class="dropdown-item">Welcome to Energy Efficiency ETL Documentation</a>
+</li>
+                                    
+<li>
+    <a href="../framework.html" class="dropdown-item">Framework</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Configs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../configs/hourly_generation_by_energy_source.html" class="dropdown-item">Hourly Generation</a>
+</li>
+            
+<li>
+    <a href="../configs/electricity_sales_to_customers.html" class="dropdown-item">Electricity Sales</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Fetch</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../fetch/provider/EIA.html" class="dropdown-item">EIA</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ingest</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ingest/provider/xata.html" class="dropdown-item">XATA</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../main.html" class="dropdown-item">Main Logic</a>
+</li>
+                                    
+<li>
+    <a href="../utils.html" class="dropdown-item">Utilities</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data-model/model.html" class="nav-link">Data Model</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Blogs</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../blogs/blog1.html" class="dropdown-item">Electricity to Customers</a>
+</li>
+                                    
+<li>
+    <a href="../blogs/blog2.html" class="dropdown-item">Wind and Solar Growth</a>
+</li>
+                                    
+<li>
+    <a href="../blogs/blog3.html" class="dropdown-item">Net Importer to Net Exporter</a>
+</li>
+                                    
+<li>
+    <a href="../blogs/blog4.html" class="dropdown-item">Energy Consumption by Sector</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Dashboard</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="generation.html" class="dropdown-item">Electricity Generation</a>
+</li>
+                                    
+<li>
+    <a href="consumption.html" class="dropdown-item active" aria-current="page">Electricity Consumption</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="generation.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#energy-consumption-in-us-states" class="nav-link">Energy Consumption in U.S. States</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#slicers" class="nav-link">Slicers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cards" class="nav-link">Cards</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#line-chart" class="nav-link">Line Chart</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#donut-chart" class="nav-link">Donut Chart</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bar-chart" class="nav-link">Bar Chart</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#table" class="nav-link">Table</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#map" class="nav-link">Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="energy-consumption-in-us-states"><strong>Energy Consumption in U.S. States</strong></h1>
+<p><img alt="Dashboard" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/consumption-dashboard.png?raw=true" /></p>
+<p>The “<strong>Energy Consumption in US State</strong>” dashboard offers a comprehensive view of energy usage, pricing, and revenue patterns across the U.S. It visualizes key metrics such as total consumption, revenue, average electricity rates, and sector-wise energy distribution, highlighting variations by state and sector. With focused insights on residential consumption and state-level pricing, the dashboard serves as a valuable tool for understanding trends in energy demand, aiding providers, policymakers, and analysts in making informed, data-driven decisions.</p>
+<hr />
+<h2 id="slicers"><strong>Slicers</strong></h2>
+<h3 id="1-yearmonth-slicer"><strong>1. Year/Month Slicer</strong></h3>
+<p><img alt="Year/Month Slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/year-month%20slicer.png?raw=true" /></p>
+<p>Enables the selection of a specific date range, allowing users to filter data for any date between 2019 and 2024.</p>
+<hr />
+<h3 id="2-region-slicer"><strong>2. Region Slicer</strong></h3>
+<p><img alt="Region Slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/region%20slicer.png?raw=true" /></p>
+<p>Allows users to filter data by region, making it easier to view energy metrics for specific areas across the U.S. These regions include:
+- California
+- Carolinas
+- Central
+- Florida
+- Mid-Atlantic
+- Midwest
+- New England
+- New York
+- Northwest
+- Southwest
+- Southeast
+- Tennessee
+- Texas</p>
+<hr />
+<h3 id="3-sector-slicer"><strong>3. Sector Slicer</strong></h3>
+<p><img alt="Sector Slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/sector%20slicer.png?raw=true" /></p>
+<p>Allows users to pick specific sectors, including:
+- Residential
+- Commercial
+- Industrial
+- Transportation
+- Others</p>
+<hr />
+<h2 id="cards"><strong>Cards</strong></h2>
+<h3 id="1-consumption-mwh"><strong>1. Consumption (MWh)</strong></h3>
+<p><img alt="Consumption" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/total%20cons%20card.png?raw=true" /></p>
+<p>This metric shows the total energy consumption, highlighting the high energy demands across various sectors in the U.S.</p>
+<hr />
+<h3 id="2-revenue-million-dollars"><strong>2. Revenue (Million Dollars)</strong></h3>
+<p><img alt="Revenue" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/revenue%20card.png?raw=true" /></p>
+<p>The revenue generated reflects income from energy consumption. This revenue data, combined with consumption, could indicate pricing strategies and profitability trends in the energy sector.</p>
+<hr />
+<h3 id="3-average-electricity-rate-dollarsmwh"><strong>3. Average Electricity Rate (Dollars/MWh)</strong></h3>
+<p><img alt="Average" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/Avg%20card.png?raw=true" /></p>
+<p>This rate shows the cost of electricity per megawatt-hour. It serves as an indicator of energy costs for consumers and can be influenced by various factors such as fuel prices, production costs, and policy changes.</p>
+<hr />
+<h3 id="4-revenue-per-customer-dollars"><strong>4. Revenue per Customer (Dollars)</strong></h3>
+<p><img alt="Revenue per Customer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/revenue%20per%20cust%20card.png?raw=true" /></p>
+<p>This metric indicates the revenue generated from electricity consumption per customer. It helps understand the cost distribution and energy pricing across different sectors and regions.</p>
+<hr />
+<h2 id="line-chart"><strong>Line Chart</strong></h2>
+<h3 id="revenue-growth"><strong>Revenue Growth</strong></h3>
+<p><img alt="Revenue Growth" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/line%20chart.png?raw=true" /></p>
+<p>This line chart illustrates the average monthly revenue growth throughout the year.</p>
+<ul>
+<li><strong>Tooltip</strong>: Sector and Customers</li>
+</ul>
+<p><strong>Trend Analysis:</strong>
+- Revenue peaks around mid-year, likely in the summer, and then decreases toward the end of the year.
+- The rise in revenue is attributed to increased energy demand in the warmer months, while the decline reflects reduced demand in cooler months.
+- This seasonal revenue pattern aligns with energy consumption trends, particularly in regions with high air conditioning use during warmer months.
+- The chart can help plan for resource allocation and forecast revenue for similar periods in the future.</p>
+<hr />
+<h2 id="donut-chart"><strong>Donut Chart</strong></h2>
+<h3 id="sector-wise-division"><strong>Sector-Wise Division</strong></h3>
+<p><img alt="Donut Chart" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/donut%20chart.png?raw=true" /></p>
+<p>This chart breaks down energy consumption across sectors, showing the percentage distribution among industrial, residential, and commercial sectors.</p>
+<p><strong>Trend Analysis:</strong>
+- Residential usage has the largest share, indicating that households are the primary energy consumers, followed closely by the commercial and industrial sectors.
+- With residential consumption as the highest, energy providers may focus on efficiency improvements in this sector.
+- Targeted programs and policies could address the needs of residential consumers to manage demand during peak times.</p>
+<hr />
+<h2 id="bar-chart"><strong>Bar Chart</strong></h2>
+<h3 id="top-5-states-by-consumption-in-residential-sector"><strong>Top 5 States by Consumption in Residential Sector</strong></h3>
+<p><img alt="Bar Chart" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/barchart.png?raw=true" /></p>
+<p>This bar chart compares the consumption and the number of residential customers in the top five states (California, Texas, Florida, North Carolina, and Georgia).</p>
+<ul>
+<li><strong>Tooltip</strong>: Electricity price in cents/MWh</li>
+</ul>
+<p><strong>Trend Analysis:</strong>
+- California has the highest consumption among these states, with Texas following closely. Both states also have a high number of residential customers, suggesting high energy demands due to larger populations and possibly climate conditions.
+- This trend can guide targeted energy programs in states with high residential consumption. For example, California may benefit from incentives for energy-efficient appliances or renewable energy adoption in households to reduce peak demand.</p>
+<hr />
+<h2 id="table"><strong>Table</strong></h2>
+<p><img alt="Table" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/table.png?raw=true" /></p>
+<p>This table ranks states based on revenue from energy consumption, with California at the top, followed by Texas, Florida, New York, and Pennsylvania.</p>
+<ul>
+<li><strong>Tooltip</strong>: Sector-wise contribution in revenue using a pie chart.</li>
+</ul>
+<hr />
+<h2 id="map"><strong>Map</strong></h2>
+<h3 id="electricity-price-by-state"><strong>Electricity Price by State</strong></h3>
+<p><img alt="Map" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/map.png?raw=true" /></p>
+<p>This map illustrates the electricity price level by state, with shades indicating different price levels.</p>
+<ul>
+<li><strong>Tooltip</strong>: Electricity price (cents/MWh), Consumption (MWh), and Revenue (Million Dollars)</li>
+</ul>
+<p><strong>Trend Analysis:</strong>
+- States with darker shades indicate higher electricity prices. Coastal and densely populated states, like California, tend to have higher prices, likely due to greater demand and different supply dynamics compared to states with lighter shades.
+- Understanding the geographical variation in electricity prices helps highlight areas where consumers bear higher costs.
+- This data can be used to analyze the factors driving these differences, such as fuel type, generation methods, or infrastructure costs, and to explore cost-reduction strategies.</p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

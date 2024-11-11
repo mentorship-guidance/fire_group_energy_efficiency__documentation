@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Hourly Generation - Energy Efficiency ETL Documentation</title>
+        <title>Energy Consumption by Sector - Energy Efficiency ETL Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -48,7 +48,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Framework</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Framework</a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
@@ -56,11 +56,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="hourly_generation_by_energy_source.html" class="dropdown-item active" aria-current="page">Hourly Generation</a>
+    <a href="../configs/hourly_generation_by_energy_source.html" class="dropdown-item">Hourly Generation</a>
 </li>
             
 <li>
-    <a href="electricity_sales_to_customers.html" class="dropdown-item">Electricity Sales</a>
+    <a href="../configs/electricity_sales_to_customers.html" class="dropdown-item">Electricity Sales</a>
 </li>
     </ul>
   </li>
@@ -98,23 +98,23 @@
                                 <a href="../data-model/model.html" class="nav-link">Data Model</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Blogs</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Blogs</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../blogs/blog1.html" class="dropdown-item">Electricity to Customers</a>
+    <a href="blog1.html" class="dropdown-item">Electricity to Customers</a>
 </li>
                                     
 <li>
-    <a href="../blogs/blog2.html" class="dropdown-item">Wind and Solar Growth</a>
+    <a href="blog2.html" class="dropdown-item">Wind and Solar Growth</a>
 </li>
                                     
 <li>
-    <a href="../blogs/blog3.html" class="dropdown-item">Net Importer to Net Exporter</a>
+    <a href="blog3.html" class="dropdown-item">Net Importer to Net Exporter</a>
 </li>
                                     
 <li>
-    <a href="../blogs/blog4.html" class="dropdown-item">Energy Consumption by Sector</a>
+    <a href="blog4.html" class="dropdown-item active" aria-current="page">Energy Consumption by Sector</a>
 </li>
                                 </ul>
                             </li>
@@ -140,12 +140,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../framework.html" class="nav-link">
+                                <a rel="prev" href="blog3.html" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="electricity_sales_to_customers.html" class="nav-link">
+                                <a rel="next" href="../Dashboard/generation.html" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -167,17 +167,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#hourly-generation-by-energy-source-configuration" class="nav-link">Hourly Generation by Energy Source Configuration</a>
+            <li class="nav-item" data-bs-level="1"><a href="#breaking-down-energy-consumption-a-sector-wise-analysis-of-the-us" class="nav-link">Breaking Down Energy Consumption: A Sector-Wise Analysis of the U.S.</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#configuration-structure" class="nav-link">Configuration Structure</a>
+            <li class="nav-item" data-bs-level="2"><a href="#understanding-energy-resources" class="nav-link">Understanding Energy Resources</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
+            <li class="nav-item" data-bs-level="2"><a href="#the-electric-power-sector" class="nav-link">The Electric Power Sector</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#end-use-sectors-and-energy-consumption" class="nav-link">End-Use Sectors and Energy Consumption</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sectoral-distinctions-in-energy-sources" class="nav-link">Sectoral Distinctions in Energy Sources</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -188,177 +192,47 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="hourly-generation-by-energy-source-configuration"><strong>Hourly Generation by Energy Source Configuration</strong></h1>
-<h2 id="overview"><strong>Overview</strong></h2>
-<p>This configuration file is used to fetch hourly generation data by energy source from the EIA API. It contains details about the data provider, API endpoint, parameters for the API request, and rules for data transformation before ingestion into the Xata database.</p>
-<h2 id="configuration-structure"><strong>Configuration Structure</strong></h2>
-<h4 id="providers"><strong>Providers</strong></h4>
-<p>The <code>providers</code> section contains all the necessary information to access the provider API.</p>
+<h1 id="breaking-down-energy-consumption-a-sector-wise-analysis-of-the-us"><strong>Breaking Down Energy Consumption: A Sector-Wise Analysis of the U.S.</strong></h1>
+<p><img alt="Bulb" src="https://github.com/tanishq-h/repo/blob/b2/images/blog4/energy-consumption-bulb.png?raw=true" /></p>
+<p>Energy use is an anchor for Americans, touching everything from the transportation and industrial sectors to residential living and commercial activities. The U.S. relies on a diversified tapestry of energy sources, which can be broken down into two major sources: primary sources, including fossil fuels and nuclear power, and sources of renewable energy, as well as secondary sources in the form of electricity generated from these raw materials. </p>
+<p>First among crucial important details to understand in connection with the nuance of U.S. energy usage are how these sources interconnect and affect various sectors. </p>
+<p>In 2023, the U.S. used about 94 quadrillion Btu of energy: this reflects the country's energy demand and the shifting energy landscape. Electric power is the sector where about 96% of the utility-scale electricity generated was distributed to the various end-use sectors: Transportation, industrial, residential, and commercial consume different energy types that meet their respective needs. </p>
+<p>This blog will deconstruct energy usage in the United States by detailing primary and secondary sources used within different sectors. Trends, challenges, and areas of transition towards more sustainable forms of energy usage are taken note of. Importantly, this insight is timely because the nation must balance energy demand with environmental considerations and rapid economic growth within a fluctuating global environment.</p>
+<hr />
+<h2 id="understanding-energy-resources"><strong>Understanding Energy Resources</strong></h2>
+<h3 id="primary-source-of-energy"><strong>Primary Source of Energy</strong></h3>
+<p>A major source of energy is fossil fuels, such as petroleum, natural gas, coal, nuclear power, and renewable energy sources. These are raw energy sources from the environment.</p>
+<h3 id="secondary-energy-sources"><strong>Secondary Energy Sources</strong></h3>
+<p>Electricity acts as a secondary energy source, derived from primary energy sources. It plays an important role in powering various sectors in the economy.</p>
+<h3 id="energy-measurements"><strong>Energy Measurements</strong></h3>
+<p>Energy sources are quantified in different physical parameters:</p>
 <ul>
-<li><strong>provider</strong>: </li>
-<li><strong>Type</strong>: <code>string</code></li>
-<li>
-<p><strong>Description</strong>: Specifies the data provider. In our case, it is set to "EIA".</p>
-</li>
-<li>
-<p><strong>base_url</strong>: </p>
-</li>
-<li><strong>Type</strong>: <code>string</code></li>
-<li><strong>Description</strong>: The base URL for the EIA API endpoint from which the data will be fetched.</li>
-<li>
-<p><strong>Example</strong>: <code>https://api.eia.gov/v2/electricity/rto/fuel-type-data/data/</code></p>
-</li>
-<li>
-<p><strong>params</strong>: </p>
-</li>
-<li><strong>Type</strong>: <code>object</code></li>
-<li><strong>Description</strong>: Contains various parameters for the API request.</li>
+<li>Liquid fuel is measured in barrels or gallons.</li>
+<li>Natural gas is measured in cubic feet.</li>
+<li>Coal is measured in light tons.</li>
+<li>Electricity is measured in kilowatts and kilowatt-hours.</li>
 </ul>
-<h4 id="params-details"><strong>Params Details</strong></h4>
+<p>In the United States, the <strong>British thermal unit (Btu)</strong> is a common unit for comparing energies. By 2023, the U.S. total primary energy consumption reached about <strong>94 quadrillion BTUs</strong>. </p>
+<p><img alt="primary cons by source" src="https://github.com/tanishq-h/repo/blob/b2/images/blog4/primary%20energy%20consumption%20by%20energy%20source.png?raw=true" /></p>
+<hr />
+<h2 id="the-electric-power-sector"><strong>The Electric Power Sector</strong></h2>
+<p>In 2023, nearly <strong>96% of total utility-scale electricity</strong> generated in the United States came from the electric power sector and almost all of this power produced was sold to other sectors. </p>
+<p>In this context, <strong>utility-scale electricity generation</strong> is defined to include only those power plants with generating capacity of at least one megawatt, which is large enough to contribute to the energy supply of the country.</p>
+<hr />
+<h2 id="end-use-sectors-and-energy-consumption"><strong>End-Use Sectors and Energy Consumption</strong></h2>
+<p>The transportation, industrial, residential, and commercial sectors are end-use sectors that are defined as consuming primary energy and electricity produced by the electric power industry.</p>
+<h3 id="energy-consumption-by-these-end-use-sectors-includes-the-following"><strong>Energy consumption by these end-use sectors includes the following:</strong></h3>
 <ul>
-<li>
-<p><strong>frequency</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>string</code></li>
-<li><strong>Description</strong>: The frequency of the data. Here, it is set to "hourly".</li>
+<li>Use of primary energy sources</li>
+<li>Use of purchased electric energy</li>
+<li>Electricity use associated with energy losses in system energy conversion, energy purchase, and geographical transmission, generation, and distribution of purchased electric energy</li>
+<li>Other energy losses</li>
 </ul>
-</li>
-<li>
-<p><strong>data</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>array</code></li>
-<li><strong>Description</strong>: Specifies which data fields to retrieve. </li>
-<li><strong>Example</strong>: <code>["value"]</code> indicates that only the "value" field will be fetched.</li>
-</ul>
-</li>
-<li>
-<p><strong>facets</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>object</code></li>
-<li>
-<p><strong>Description</strong>: Contains filtering options for the data.</p>
-</li>
-<li>
-<p><strong>fueltype</strong>: </p>
-</li>
-<li><strong>Type</strong>: <code>array</code></li>
-<li><strong>Description</strong>: Specifies the types of fuel to include in the data fetch. </li>
-<li>
-<p><strong>Example</strong>: <code>["COL", "NG", "NUC", "OIL", "OTH", "SUN", "UNK", "WAT", "WND"]</code>.</p>
-</li>
-<li>
-<p><strong>respondent</strong>: </p>
-</li>
-<li><strong>Type</strong>: <code>array</code></li>
-<li><strong>Description</strong>: Specifies the respondents from whom the data is being fetched. </li>
-<li><strong>Example</strong>: <code>["AEC", "AECI", "AVA", "AVRN", "AZPS", ...]</code>.</li>
-</ul>
-</li>
-<li>
-<p><strong>start</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>string</code> or <code>null</code></li>
-<li><strong>Description</strong>: The start date for the data fetch. Setting this to <code>null</code> indicates that it will fetch all available data from the beginning.</li>
-</ul>
-</li>
-<li>
-<p><strong>end</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>string</code> or <code>null</code></li>
-<li><strong>Description</strong>: The end date for the data fetch. Setting this to <code>null</code> indicates that it will fetch data up to the current date.</li>
-</ul>
-</li>
-<li>
-<p><strong>sort</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>array</code></li>
-<li><strong>Description</strong>: Specifies the sorting order of the fetched data.</li>
-<li><strong>Example</strong>: 
-  <code>json
-  [
-      {"column": "fueltype", "direction": "desc"},
-      {"column": "respondent", "direction": "asc"},
-      {"column": "period", "direction": "asc"},
-      {"column": "value", "direction": "asc"}
-  ]</code>
-  This indicates sorting first by <code>fueltype</code> in descending order, followed by <code>respondent</code>, <code>period</code>, and <code>value</code> in ascending order.</li>
-</ul>
-</li>
-<li>
-<p><strong>offset</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>integer</code></li>
-<li><strong>Description</strong>: The offset for pagination. It determines where to start fetching records.</li>
-<li><strong>Example</strong>: <code>0</code> means start from the beginning.</li>
-</ul>
-</li>
-<li>
-<p><strong>length</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>integer</code></li>
-<li><strong>Description</strong>: The maximum number of records to fetch in a single request.</li>
-<li><strong>Example</strong>: <code>5000</code> indicates that up to 5000 records will be fetched.</li>
-</ul>
-</li>
-</ul>
-<h3 id="ingest"><strong>Ingest</strong></h3>
-<p>The <code>ingest</code> section defines where the fetched data will be stored.</p>
-<ul>
-<li><strong>target</strong>: </li>
-<li><strong>Type</strong>: <code>string</code></li>
-<li><strong>Description</strong>: Specifies the target database for ingestion. </li>
-<li>
-<p><strong>Example</strong>: <code>"Xata"</code> indicates that the data will be ingested into the Xata database.</p>
-</li>
-<li>
-<p><strong>table_name</strong>: </p>
-</li>
-<li><strong>Type</strong>: <code>string</code></li>
-<li><strong>Description</strong>: The name of the table in the target database where the data will be stored.</li>
-<li><strong>Example</strong>: <code>"test"</code> indicates the name of the table.</li>
-</ul>
-<h3 id="rules"><strong>Rules</strong></h3>
-<p>The <code>rules</code> section contains transformation rules for the data before ingestion.</p>
-<ul>
-<li><strong>symbol_replacement</strong>: </li>
-<li><strong>Type</strong>: <code>object</code></li>
-<li>
-<p><strong>Description</strong>: Rules for replacing specific symbols in the data.</p>
-</li>
-<li>
-<p><strong>replacements</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>array</code></li>
-<li><strong>Description</strong>: Specifies the symbols to replace and their replacements.</li>
-<li><strong>Example</strong>:
-  <code>json
-  [
-      {
-          "symbols": ["-"],
-          "replace_with": "_"
-      }
-  ]</code>
-  This indicates that all hyphens (<code>-</code>) in the data will be replaced with underscores (<code>_</code>).</li>
-</ul>
-</li>
-<li>
-<p><strong>null_value_replacement</strong>: </p>
-</li>
-<li><strong>Type</strong>: <code>object</code></li>
-<li>
-<p><strong>Description</strong>: Specifies how to handle null values in the data.</p>
-</li>
-<li>
-<p><strong>replace_with</strong>: </p>
-<ul>
-<li><strong>Type</strong>: <code>integer</code></li>
-<li><strong>Description</strong>: The value to replace nulls with.</li>
-<li><strong>Example</strong>: <code>0</code> indicates that null values will be replaced with <code>0</code>.</li>
-</ul>
-</li>
-</ul>
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>This configuration file is essential for retrieving, transforming, and ingesting hourly generation data by energy source from the EIA API into the Xata database. The transformation rules ensure that the data is clean and consistent before ingestion.</p></div>
+<hr />
+<h2 id="sectoral-distinctions-in-energy-sources"><strong>Sectoral Distinctions in Energy Sources</strong></h2>
+<p>The energy sources employed by a sector are different in degree. For instance, in 2023, for the <strong>transportation sector</strong>, almost <strong>89% of the transported energy consumed</strong> was primary energy, whereas this source accounted for <strong>less than 1%</strong> for the electric power sector.</p>
+<p>The below graph serves to provide the various types and quantities of primary energy sources in the U.S., stating the electric power sector and the energy use sectors and the sales of electric energy by the electric power sector to the energy use sectors.</p>
+<p><img alt="consumption-by-source-and-sector" src="https://github.com/tanishq-h/repo/blob/b2/images/blog4/consumption-by-source-and-sector.png?raw=true" /></p></div>
             </div>
         </div>
 

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Wind and Solar Growth - Energy Efficiency ETL Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Energy Efficiency ETL Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Home</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../index.html" class="dropdown-item">Welcome to Energy Efficiency ETL Documentation</a>
+</li>
+                                    
+<li>
+    <a href="../framework.html" class="dropdown-item">Framework</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Framework</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Configs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../configs/hourly_generation_by_energy_source.html" class="dropdown-item">Hourly Generation</a>
+</li>
+            
+<li>
+    <a href="../configs/electricity_sales_to_customers.html" class="dropdown-item">Electricity Sales</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Fetch</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../fetch/provider/EIA.html" class="dropdown-item">EIA</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ingest</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ingest/provider/xata.html" class="dropdown-item">XATA</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../main.html" class="dropdown-item">Main Logic</a>
+</li>
+                                    
+<li>
+    <a href="../utils.html" class="dropdown-item">Utilities</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data-model/model.html" class="nav-link">Data Model</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Blogs</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="blog1.html" class="dropdown-item">Electricity to Customers</a>
+</li>
+                                    
+<li>
+    <a href="blog2.html" class="dropdown-item active" aria-current="page">Wind and Solar Growth</a>
+</li>
+                                    
+<li>
+    <a href="blog3.html" class="dropdown-item">Net Importer to Net Exporter</a>
+</li>
+                                    
+<li>
+    <a href="blog4.html" class="dropdown-item">Energy Consumption by Sector</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Dashboard</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Dashboard/generation.html" class="dropdown-item">Electricity Generation</a>
+</li>
+                                    
+<li>
+    <a href="../Dashboard/consumption.html" class="dropdown-item">Electricity Consumption</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="blog1.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="blog3.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#wind-and-solar-to-lead-growth-of-us-power-generation" class="nav-link">Wind and Solar to Lead Growth of U.S. Power Generation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#solar-growth-across-the-us" class="nav-link">Solar Growth Across the U.S</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#wind-growth-across-the-us" class="nav-link">Wind Growth Across the U.S</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#forecast-for-wind-and-solar-growth" class="nav-link">Forecast for Wind and Solar Growth</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="wind-and-solar-to-lead-growth-of-us-power-generation"><strong>Wind and Solar to Lead Growth of U.S. Power Generation</strong></h1>
+<p><img alt="Wind and Solar Field" src="https://github.com/tanishq-h/repo/blob/b2/images/wind-solar-hybrid-systems-photo.jpeg?raw=true" /></p>
+<p>We speak of a sustainable future, and right at the top of that agenda is the imperative to find energy that is both affordable and clean. It's in this context that the United Nations has boldly set as a goal: <strong>Goal 7</strong>. Affordable and Clean Energy—access for all to affordable, reliable, sustainable, and modern energy. </p>
+<p>The good news? The U.S. is racing towards this goal at a breakneck speed, primarily due to tremendous strides in renewable energy sources, especially solar and wind.</p>
+<p>As technology improves and costs decrease, solar and wind energy are not only being used but are on track to become the leaders in the U.S. energy portfolio. The U.S. already reports incredible numbers of growth. Over the next couple of decades, energy use will continue to rise, and a significant portion of this will come from renewable energy, particularly solar and wind. This shift away from fossil fuels—coal, oil, and natural gas—will not only be a crucial step in fighting climate change but also ensure cleaner energy for everyone.</p>
+<p>Renewable energy isn't just about reducing carbon emissions; it's about creating a more equal and sustainable energy system. It offers an opportunity to generate electricity without emitting harmful pollutants or contributing to climate change. This could lead to lower energy costs and greater accessibility of clean power, in alignment with the realization of the UN's Sustainable Development Goals. More importantly, the expansion of these industries is helping to create sustainable local economies, generate jobs, and enhance long-term economic resilience.</p>
+<p>Numbers don’t lie: For the first time ever, in 2019, wind energy surpassed hydropower as the largest source of renewable energy in the United States. In fact, solar power surpassed hydropower in 2022, solidifying solar and wind as the country's biggest sources of new energy. This trend is expected to continue, with solar and wind driving the growth of U.S. power generation in the coming decade, promoting affordability and sustainability in our energy grid.</p>
+<p>With every new solar panel installed and every new wind turbine powered up, we move closer to the UN's goal of <strong>affordable and clean energy for all</strong>. Let's dive into how solar and wind are shaping this bright, greener future.</p>
+<hr />
+<h2 id="solar-growth-across-the-us"><strong>Solar Growth Across the U.S</strong></h2>
+<p><img alt="Solar gen 2023" src="https://github.com/tanishq-h/repo/blob/b2/images/solar%20gen%202023.png?raw=true" /></p>
+<p>Between 2019 and 2023, the United States solar industry experienced remarkable growth, becoming one of the fastest-growing sectors in terms of energy consumption. During this period, the country installed an impressive <strong>71 GW of solar capacity</strong>—more than double the installed capacity since 2019.</p>
+<p>As of 2019, the U.S. had nearly 50 GW of installed solar capacity. By 2023, this had grown to over <strong>121 GW</strong>—a 14.2% increase in just four years. This growth was driven by falling technology costs, increasing demand for clean energy, and supportive policies at the federal, state, and local levels.</p>
+<p>The production of solar electricity surged in tandem with this capacity increase. By 2023, the U.S. produced over <strong>209,197 GWh</strong> of electricity from solar sources—an increase of more than <strong>723%</strong> from 2014 and eight times its 2014 production levels. This growth is vital in meeting the nation's energy demands and fulfilling carbon emissions reduction goals.</p>
+<p>Several states played a leading role in this growth from 2019 to 2023. California led the way, adding nearly <strong>27,800 MW</strong> of new capacity. Texas followed with <strong>18,179 MW</strong>, while Florida added <strong>10,203 MW</strong>. North Carolina and Nevada also made significant contributions, adding <strong>6,416 MW</strong> and <strong>4,313 MW</strong>, respectively. These states are now among the largest producers of solar energy, making a significant contribution to the nation's solar generation.</p>
+<p>Beyond modernizing the U.S. energy grid, these investments are providing clear benefits: <strong>more energy from fewer fossil fuel imports</strong> and accelerating the transition to a more sustainable, affordable energy future.</p>
+<p><img alt="solar yoy growth" src="https://github.com/tanishq-h/repo/blob/b2/images/solar%20yoy%20growth.png?raw=true" /></p>
+<hr />
+<h2 id="wind-growth-across-the-us"><strong>Wind Growth Across the U.S</strong></h2>
+<p><img alt="wind gen 2023" src="https://github.com/tanishq-h/repo/blob/b2/images/wind%20gen%202023.png?raw=true" /></p>
+<p>The U.S. wind industry also saw significant progress between 2019 and 2023, adding over <strong>83 GW</strong> of new wind capacity. Overall, installed wind capacity doubled to more than <strong>125 GW</strong> by 2023. This increase led to more than twice as much electricity being produced from wind as in 2014, with <strong>243,580 GWh</strong> of wind-generated electricity in 2023—a <strong>134% increase</strong> over the last decade.</p>
+<p>The states leading this growth include Texas with <strong>26,658 MW</strong>, Oklahoma with <strong>8,466 MW</strong>, Iowa with <strong>7,241 MW</strong>, Kansas with <strong>6,074 MW</strong>, and Illinois with <strong>4,347 MW</strong>. These states have contributed significantly to the nation's wind generation.</p>
+<p>However, wind generation was slightly lower in 2023 compared to 2022, largely due to natural factors like slower wind speeds in the first half of 2023. Despite a decline in the first half of the year, wind generation rebounded in the latter half, increasing by <strong>2.4%</strong> from August to December compared to the same period in 2022. While this dip is temporary, the long-term trend confirms wind energy as a major player in U.S. power generation.</p>
+<p><img alt="wind yoy growth" src="https://github.com/tanishq-h/repo/blob/b2/images/wind%20yoy%20growth.png?raw=true" /></p>
+<hr />
+<h2 id="forecast-for-wind-and-solar-growth"><strong>Forecast for Wind and Solar Growth</strong></h2>
+<p>The U.S. Energy Information Administration (EIA) projects that wind and solar power will continue to drive a surge in U.S. electricity generation over the next two years. Solar generation is expected to expand by <strong>75%</strong> with new projects coming online in 2024, increasing from <strong>163 billion kWh in 2023</strong> to <strong>286 billion kWh by 2025</strong>. Wind generation will increase by <strong>11%</strong>, doubling to <strong>476 billion kWh</strong> by 2025 from <strong>430 billion kWh</strong> in 2023.</p>
+<p>In 2023, the U.S. electric power sector produced <strong>4,017 billion kWh</strong> of electricity, of which <strong>874 billion kWh</strong> came from renewable sources such as wind, solar, hydro, biomass, and geothermal. Renewable generation surpassed nuclear power in 2021 and outpaced coal in 2022, moving the U.S. closer to a clean energy future.</p>
+<p>Conversely, coal generation is expected to decline further, dropping by <strong>18%</strong> from <strong>665 billion kWh</strong> in 2023 to <strong>548 billion kWh</strong> by 2025. Natural gas will remain the largest source of U.S. electricity generation, producing approximately <strong>1,700 billion kWh</strong> per year in 2024 and 2025. Nuclear power generation will remain relatively stable, increasing modestly from <strong>776 billion kWh in 2023</strong> to <strong>797 billion kWh by 2025</strong>.</p>
+<p>The growth in renewable generation, driven by solar and wind, is expected to continue as new installations increase capacity, fueling the expansion of renewable energy in the U.S. Solar is currently the fastest-growing renewable source, bolstered by significant capacity additions and favorable tax policies. By the end of 2024, the U.S. is expected to have added <strong>38% more solar capacity</strong>, bringing total capacity to <strong>131 GW</strong> by the end of 2024, up from <strong>95 GW</strong> at the end of 2023. Wind capacity, on the other hand, will increase more modestly from <strong>149 GW</strong> in 2023 to <strong>156 GW</strong> by the end of 2024.</p>
+<p>This rise in renewable energy signifies a major shift in the U.S. energy profile, with solar and wind taking center stage as the country reduces its reliance on fossil fuels and moves toward clean energy goals.</p>
+<hr />
+<p>The future of U.S. power generation is bright, with wind and solar leading the way toward a cleaner, more sustainable, and affordable energy grid. As technology advances and policy support strengthens, the U.S. will continue to build on these trends to meet its renewable energy goals and contribute to a global shift toward cleaner energy.</p>
+<p><img alt="annual gen capacity" src="https://github.com/tanishq-h/repo/blob/b2/images/annual%20gen%20capacity.png?raw=true" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
