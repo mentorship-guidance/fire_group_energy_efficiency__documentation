@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Electricity Consumption - Energy Efficiency ETL Documentation</title>
+        <title>Overview - Energy Efficiency ETL Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -127,11 +127,11 @@
 </li>
                                     
 <li>
-    <a href="consumption.html" class="dropdown-item active" aria-current="page">Electricity Consumption</a>
+    <a href="consumption.html" class="dropdown-item">Electricity Consumption</a>
 </li>
                                     
 <li>
-    <a href="overview.html" class="dropdown-item">Overview</a>
+    <a href="overview.html" class="dropdown-item active" aria-current="page">Overview</a>
 </li>
                                 </ul>
                             </li>
@@ -144,12 +144,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="generation.html" class="nav-link">
+                                <a rel="prev" href="consumption.html" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="overview.html" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -171,7 +171,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#energy-consumption-in-us-states" class="nav-link">Energy Consumption in U.S. States</a>
+            <li class="nav-item" data-bs-level="1"><a href="#electricity-efficiency-overview-in-us" class="nav-link">Electricity Efficiency Overview in U.S.</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#slicers" class="nav-link">Slicers</a>
               <ul class="nav flex-column">
@@ -185,7 +185,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#donut-chart" class="nav-link">Donut Chart</a>
+            <li class="nav-item" data-bs-level="2"><a href="#area-chart" class="nav-link">Area Chart</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -193,11 +193,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#map" class="nav-link">Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#table" class="nav-link">Table</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#map" class="nav-link">Map</a>
+            <li class="nav-item" data-bs-level="2"><a href="#kpi" class="nav-link">KPI</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -208,110 +212,105 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="energy-consumption-in-us-states"><strong>Energy Consumption in U.S. States</strong></h1>
-<p><img alt="Dashboard" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/consumption-dashboard.png?raw=true" /></p>
-<p>The “<strong>Energy Consumption in US State</strong>” dashboard offers a comprehensive view of energy usage, pricing, and revenue patterns across the U.S. It visualizes key metrics such as total consumption, revenue, average electricity rates, and sector-wise energy distribution, highlighting variations by state and sector. With focused insights on residential consumption and state-level pricing, the dashboard serves as a valuable tool for understanding trends in energy demand, aiding providers, policymakers, and analysts in making informed, data-driven decisions.</p>
+<h1 id="electricity-efficiency-overview-in-us"><strong>Electricity Efficiency Overview in U.S.</strong></h1>
+<p><img alt="Overview" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview-dashboard.png?raw=true" /></p>
+<p>This document provides an overview of the <strong>Energy Overview Dashboard</strong> designed to visualize energy generation, consumption, and efficiency trends across various U.S. states and regions. The dashboard uses multiple Power BI components to deliver insights on energy metrics such as generation, consumption, efficiency rates, and seasonal trends, helping stakeholders make informed decisions.</p>
 <hr />
 <h2 id="slicers"><strong>Slicers</strong></h2>
-<h3 id="1-yearmonth-slicer"><strong>1. Year/Month Slicer</strong></h3>
-<p><img alt="Year/Month Slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/year-month%20slicer.png?raw=true" /></p>
+<h3 id="1-yearmonth-slicer">1. <strong>Year/Month Slicer</strong></h3>
+<p><img alt="Year month slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/year%20slicer.png?raw=true" /></p>
 <p>Enables the selection of a specific date range, allowing users to filter data for any date between 2019 and 2024.</p>
 <hr />
-<h3 id="2-region-slicer"><strong>2. Region Slicer</strong></h3>
-<p><img alt="Region Slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/region%20slicer.png?raw=true" /></p>
-<p>Allows users to filter data by region, making it easier to view energy metrics for specific areas across the U.S. These regions include:
-- California
-- Carolinas
-- Central
-- Florida
-- Mid-Atlantic
-- Midwest
-- New England
-- New York
-- Northwest
-- Southwest
-- Southeast
-- Tennessee
-- Texas</p>
-<hr />
-<h3 id="3-sector-slicer"><strong>3. Sector Slicer</strong></h3>
-<p><img alt="Sector Slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/sector%20slicer.png?raw=true" /></p>
-<p>Allows users to pick specific sectors, including:
-- Residential
-- Commercial
-- Industrial
-- Transportation
-- Others</p>
+<h3 id="2-region-slicer">2. <strong>Region Slicer</strong></h3>
+<p><img alt="Region" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/region%20slice.png?raw=true" /></p>
+<p>Allows users to filter data by region, making it easier to view energy metrics for specific areas across the U.S. These regions include:</p>
+<ul>
+<li>California</li>
+<li>Carolinas</li>
+<li>Central</li>
+<li>Florida</li>
+<li>Mid-Atlantic</li>
+<li>Midwest</li>
+<li>New England</li>
+<li>New York</li>
+<li>Northwest</li>
+<li>Southwest</li>
+<li>Southeast</li>
+<li>Tennessee</li>
+<li>Texas</li>
+</ul>
 <hr />
 <h2 id="cards"><strong>Cards</strong></h2>
-<h3 id="1-consumption-mwh"><strong>1. Consumption (MWh)</strong></h3>
-<p><img alt="Consumption" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/total%20cons%20card.png?raw=true" /></p>
-<p>This metric shows the total energy consumption, highlighting the high energy demands across various sectors in the U.S.</p>
+<h3 id="1-generation-mwh"><strong>1. Generation (MWh)</strong></h3>
+<p><img alt="Generation" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/total%20generation.png?raw=true" /></p>
+<p>Displays the total energy generated in megawatt-hours (MWh) for the selected period.</p>
 <hr />
-<h3 id="2-revenue-million-dollars"><strong>2. Revenue (Million Dollars)</strong></h3>
-<p><img alt="Revenue" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/revenue%20card.png?raw=true" /></p>
-<p>The revenue generated reflects income from energy consumption. This revenue data, combined with consumption, could indicate pricing strategies and profitability trends in the energy sector.</p>
+<h3 id="2-consumption-mwh"><strong>2. Consumption (MWh)</strong></h3>
+<p><img alt="Consumption" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/total%20consumption.png?raw=true" /></p>
+<p>Shows the total energy consumed within the selected timeframe.</p>
 <hr />
-<h3 id="3-average-electricity-rate-dollarsmwh"><strong>3. Average Electricity Rate (Dollars/MWh)</strong></h3>
-<p><img alt="Average" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/Avg%20card.png?raw=true" /></p>
-<p>This rate shows the cost of electricity per megawatt-hour. It serves as an indicator of energy costs for consumers and can be influenced by various factors such as fuel prices, production costs, and policy changes.</p>
+<h3 id="3-average-efficiency"><strong>3. Average Efficiency (%)</strong></h3>
+<p><img alt="Efficiency" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/efficiency.png?raw=true" /></p>
+<p>Indicates the average efficiency percentage, reflecting the balance between energy generated and consumed.<br />
+<strong>Efficiency</strong> = (Generation / Consumption) * 100</p>
 <hr />
-<h3 id="4-revenue-per-customer-dollars"><strong>4. Revenue per Customer (Dollars)</strong></h3>
-<p><img alt="Revenue per Customer" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/revenue%20per%20cust%20card.png?raw=true" /></p>
-<p>This metric indicates the revenue generated from electricity consumption per customer. It helps understand the cost distribution and energy pricing across different sectors and regions.</p>
+<h3 id="4-efficiency-scale"><strong>4. Efficiency Scale</strong></h3>
+<p><img alt="Efficiency scale" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/efficiency%20scale.png?raw=true" /></p>
+<p>Gives us an idea about how the region is performing:
+- <strong>0% - 30%</strong>: Generation is way more than consumption, making it an exporter region.
+- <strong>30% - 50%</strong>: Generation is higher than consumption, allowing the region to be an exporter.
+- <strong>50% - 70%</strong>: Generation is moderately higher than consumption, making it part of an export region.
+- <strong>70% - 100%</strong>: Generation is slightly higher than consumption, so the region will likely export to neighboring areas.
+- <strong>100%+</strong>: Consumption is higher, meaning electricity is imported in such regions.</p>
 <hr />
 <h2 id="line-chart"><strong>Line Chart</strong></h2>
-<h3 id="revenue-growth"><strong>Revenue Growth</strong></h3>
-<p><img alt="Revenue Growth" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/line%20chart.png?raw=true" /></p>
-<p>This line chart illustrates the average monthly revenue growth throughout the year.</p>
-<ul>
-<li><strong>Tooltip</strong>: Sector and Customers</li>
-</ul>
+<h3 id="generation-and-consumption-trend"><strong>Generation and Consumption Trend</strong></h3>
+<p><img alt="Trend" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20line%20chart.png?raw=true" /></p>
+<p>A line chart that shows the month-by-month trend of energy generation and consumption. This chart helps identify patterns or fluctuations in energy usage and production over the year.</p>
 <p><strong>Trend Analysis:</strong>
-- Revenue peaks around mid-year, likely in the summer, and then decreases toward the end of the year.
-- The rise in revenue is attributed to increased energy demand in the warmer months, while the decline reflects reduced demand in cooler months.
-- This seasonal revenue pattern aligns with energy consumption trends, particularly in regions with high air conditioning use during warmer months.
-- The chart can help plan for resource allocation and forecast revenue for similar periods in the future.</p>
+- There is a peak in both generation and consumption during the summer months, likely due to increased demand for cooling systems.
+- A gradual decline follows in the autumn and winter months as temperatures cool and energy demands decrease.
+- This seasonal pattern suggests a direct relationship between weather conditions and energy demand. Higher generation in summer aligns with increased consumption, reflecting efforts to meet higher power needs during warmer months.</p>
 <hr />
-<h2 id="donut-chart"><strong>Donut Chart</strong></h2>
-<h3 id="sector-wise-division"><strong>Sector-Wise Division</strong></h3>
-<p><img alt="Donut Chart" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/donut%20chart.png?raw=true" /></p>
-<p>This chart breaks down energy consumption across sectors, showing the percentage distribution among industrial, residential, and commercial sectors.</p>
+<h2 id="area-chart"><strong>Area Chart</strong></h2>
+<h3 id="efficiency-in-each-season"><strong>Efficiency in Each Season</strong></h3>
+<p><img alt="Area" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20area%20chart.png?raw=true" /></p>
+<p>An area chart displaying seasonal efficiency trends, with separate sections for spring, summer, winter, and autumn. This chart helps users see how efficiency varies with seasons.</p>
 <p><strong>Trend Analysis:</strong>
-- Residential usage has the largest share, indicating that households are the primary energy consumers, followed closely by the commercial and industrial sectors.
-- With residential consumption as the highest, energy providers may focus on efficiency improvements in this sector.
-- Targeted programs and policies could address the needs of residential consumers to manage demand during peak times.</p>
+- Higher efficiency is seen during spring and autumn, with a noticeable drop in winter and summer.
+- The drop in efficiency during winter and summer may be due to energy losses associated with extreme temperatures, which can impact generation systems and lead to inefficiencies in power use.
+- These efficiency variations can be critical for planning resource allocation, as lower efficiency during extreme seasons (winter and summer) may require more generation to meet the same level of demand.</p>
 <hr />
 <h2 id="bar-chart"><strong>Bar Chart</strong></h2>
-<h3 id="top-5-states-by-consumption-in-residential-sector"><strong>Top 5 States by Consumption in Residential Sector</strong></h3>
-<p><img alt="Bar Chart" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/barchart.png?raw=true" /></p>
-<p>This bar chart compares the consumption and the number of residential customers in the top five states (California, Texas, Florida, North Carolina, and Georgia).</p>
-<ul>
-<li><strong>Tooltip</strong>: Electricity price in cents/MWh</li>
-</ul>
+<h3 id="generation-and-consumption-seasonal-trends"><strong>Generation and Consumption Seasonal Trends</strong></h3>
+<p><img alt="Bar" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20bar%20chart.png?raw=true" /></p>
+<p>A bar chart comparing energy generation and consumption across different seasons. This visualization is essential for understanding seasonal demands and supply trends.</p>
 <p><strong>Trend Analysis:</strong>
-- California has the highest consumption among these states, with Texas following closely. Both states also have a high number of residential customers, suggesting high energy demands due to larger populations and possibly climate conditions.
-- This trend can guide targeted energy programs in states with high residential consumption. For example, California may benefit from incentives for energy-efficient appliances or renewable energy adoption in households to reduce peak demand.</p>
-<hr />
-<h2 id="table"><strong>Table</strong></h2>
-<p><img alt="Table" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/table.png?raw=true" /></p>
-<p>This table ranks states based on revenue from energy consumption, with California at the top, followed by Texas, Florida, New York, and Pennsylvania.</p>
-<ul>
-<li><strong>Tooltip</strong>: Sector-wise contribution in revenue using a pie chart.</li>
-</ul>
+- Summer has the highest generation and consumption values, likely driven by increased cooling demands, while winter follows closely due to heating needs.
+- In spring and autumn, both generation and consumption are relatively lower, reflecting milder weather and less extreme energy usage.
+- This pattern suggests that energy providers can optimize their operations by preparing for peak demand periods in summer and winter. Managing resources more effectively during these times could improve efficiency and reduce potential energy shortages.</p>
 <hr />
 <h2 id="map"><strong>Map</strong></h2>
-<h3 id="electricity-price-by-state"><strong>Electricity Price by State</strong></h3>
-<p><img alt="Map" src="https://github.com/tanishq-h/repo/blob/b2/images/consumption-dashboard/map.png?raw=true" /></p>
-<p>This map illustrates the electricity price level by state, with shades indicating different price levels.</p>
+<h3 id="efficiency-trends-in-region"><strong>Efficiency Trends in Region</strong></h3>
+<p><img alt="Map" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20map.png?raw=true" /></p>
+<p>A geographic map of the U.S. showing energy efficiency percentages by region. States are color-coded based on efficiency levels, providing a visual comparison across regions.</p>
 <ul>
-<li><strong>Tooltip</strong>: Electricity price (cents/MWh), Consumption (MWh), and Revenue (Million Dollars)</li>
+<li><strong>Tooltip</strong>: Average Efficiency (%), Consumption in MWh, Generation in MWh</li>
 </ul>
 <p><strong>Trend Analysis:</strong>
-- States with darker shades indicate higher electricity prices. Coastal and densely populated states, like California, tend to have higher prices, likely due to greater demand and different supply dynamics compared to states with lighter shades.
-- Understanding the geographical variation in electricity prices helps highlight areas where consumers bear higher costs.
-- This data can be used to analyze the factors driving these differences, such as fuel type, generation methods, or infrastructure costs, and to explore cost-reduction strategies.</p>
-<hr /></div>
+- Regions with darker shades of blue represent higher efficiency, indicating more effective energy usage, while lighter shades represent lower efficiency.
+- For instance, the California region shows a high efficiency percentage, while some central areas have comparatively lower efficiency.
+- By visually distinguishing efficiency levels across regions, this map helps stakeholders identify high-performing areas and those that may benefit from improvements in energy infrastructure or conservation efforts.
+- It also highlights regional differences that may stem from varying climatic conditions, population density, or energy infrastructure maturity.</p>
+<hr />
+<h2 id="table"><strong>Table</strong></h2>
+<h3 id="regional-efficiency-table"><strong>Regional Efficiency Table</strong></h3>
+<p><img alt="Table" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20tab;le.png?raw=true" /></p>
+<p>A table with columns for regions and efficiency percentages. This section breaks down efficiency at a more granular level, helping users identify which regions perform better in energy usage. This table is sorted in ascending order of efficiency.</p>
+<hr />
+<h2 id="kpi"><strong>KPI</strong></h2>
+<h3 id="regional-efficiency-kpi"><strong>Regional Efficiency KPI</strong></h3>
+<p>This KPI is essential for identifying regions with high or low efficiency, providing an at-a-glance metric that highlights areas of energy optimization as well as regions' independence in the electric sector.</p></div>
             </div>
         </div>
 
