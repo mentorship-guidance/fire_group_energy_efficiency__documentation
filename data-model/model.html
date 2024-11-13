@@ -162,6 +162,10 @@
 <ul class="nav flex-column">
 </ul>
 </li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#region-elevation-table">Region Elevation Table</a>
+<ul class="nav flex-column">
+</ul>
+</li>
 <li class="nav-item" data-bs-level="2"><a class="nav-link" href="#hourly-generation-by-energy-source-daily-interval-table">Hourly generation by energy source daily interval Table</a>
 <ul class="nav flex-column">
 </ul>
@@ -183,6 +187,10 @@
 </ul>
 </li>
 <li class="nav-item" data-bs-level="2"><a class="nav-link" href="#data-model-overview">Data Model Overview</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#references">References</a>
 <ul class="nav flex-column">
 </ul>
 </li>
@@ -416,6 +424,44 @@
 <td>String</td>
 <td>ID</td>
 <td>Two-letter abbreviation representing the state.</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<hr/>
+<h2 id="region-elevation-table"><strong>Region Elevation Table</strong></h2>
+<p>The <code>region_elevation_mapping</code> maps regions to their corresponding elevation data.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column Name</strong></th>
+<th><strong>Units</strong></th>
+<th><strong>Data Type</strong></th>
+<th><strong>Sample</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>region_name</strong></td>
+<td>String</td>
+<td>String</td>
+<td>California</td>
+<td>Name of the geographic region.</td>
+</tr>
+<tr>
+<td><strong>region_code</strong></td>
+<td>String</td>
+<td>String</td>
+<td>CA</td>
+<td>Unique identifier for the region.</td>
+</tr>
+<tr>
+<td><strong>elevation</strong></td>
+<td>Meters</td>
+<td>Float</td>
+<td>2900</td>
+<td>Elevation of the region in meters.</td>
 </tr>
 </tbody>
 </table>
@@ -688,8 +734,7 @@
 <hr/>
 <h2 id="data-model-overview"><strong>Data Model Overview</strong></h2>
 <p>The following diagram illustrates the relationship between electricity generation and consumption.</p>
-<div class="mermaid">
-erDiagram
+<div class="mermaid">erDiagram
     BA_region_mapping {
         string BA_code "Unique identifier for a Balancing Authority"
         string BA_name "Full name of the Balancing Authority"
@@ -762,6 +807,12 @@ erDiagram
         float efficiency "Ratio of consumption to generation"
     }
 
+    region_elevation_mapping {
+        string region_name "Name of the geographic region"
+        string region_code "Unique identifier for the region"
+        float elevation "Elevation of the region in meters"
+    }
+
     %% Relationships
     state_region_mapping ||--o| electricity_sale_to_customer_raw : "Maps state-region to raw sales data"
     BA_region_mapping ||--o| hourly_generation_by_energy_source : "Maps BA to hourly generation"
@@ -769,9 +820,17 @@ erDiagram
     hourly_generation_by_energy_source_daily_interval ||--o| generation_consumption_by_region : "Joins hourly generation with consumption data"
     electricity_sale_to_customer_raw ||--o| electricity_sale_to_cust_month : "Transforms raw sales data into monthly sales data"
     electricity_sale_to_cust_month ||--o| generation_consumption_by_region : "Joins sales data with generation and consumption data"
+    region_elevation_mapping ||--o| hourly_generation_by_energy_source_daily_interval : "Links elevation data to generation data"
 
-
-</div></div>
+</div>
+<hr/>
+<h2 id="references"><strong>References</strong></h2>
+<ul>
+<li>EIA Hourly electricity generation data : <a href="https://www.eia.gov/opendata/browser/electricity/rto/fuel-type-data">hourly_generation_by_energy_source_raw</a></li>
+<li>EIA Electricity Sales to Ultimate Customers : <a href="https://www.eia.gov/opendata/browser/electricity/retail-sales">electricity_sale_to_customer_raw</a></li>
+<li>EIA Balancing authorities mapping with regions : <a href="https://www.eia.gov/electricity/gridmonitor/about">BA_Region_Mapping</a></li>
+<li>Regional Elevation mapping : <a href="https://www.infoplease.com/us/geography/highest-lowest-and-mean-elevations-united-states">region_elevation_mapping</a></li>
+</ul></div>
 </div>
 </div>
 <footer class="col-md-12">

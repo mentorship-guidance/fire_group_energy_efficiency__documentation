@@ -173,31 +173,47 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#electricity-efficiency-overview-in-us" class="nav-link">Electricity Efficiency Overview in U.S.</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#slicers" class="nav-link">Slicers</a>
+            <li class="nav-item" data-bs-level="2"><a href="#yearmonth-slicer" class="nav-link">Year/Month Slicer</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#cards" class="nav-link">Cards</a>
+            <li class="nav-item" data-bs-level="2"><a href="#region-slicer" class="nav-link">Region Slicer</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#line-chart" class="nav-link">Line Chart</a>
+            <li class="nav-item" data-bs-level="2"><a href="#generation-mwh" class="nav-link">Generation (MWh)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#area-chart" class="nav-link">Area Chart</a>
+            <li class="nav-item" data-bs-level="2"><a href="#consumption-mwh" class="nav-link">Consumption (MWh)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#bar-chart" class="nav-link">Bar Chart</a>
+            <li class="nav-item" data-bs-level="2"><a href="#average-efficiency" class="nav-link">Average Efficiency (%)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#map" class="nav-link">Map</a>
+            <li class="nav-item" data-bs-level="2"><a href="#efficiency-scale" class="nav-link">Efficiency Scale</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#table" class="nav-link">Table</a>
+            <li class="nav-item" data-bs-level="2"><a href="#generation-and-consumption-trend" class="nav-link">Generation and Consumption Trend</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#efficiency-in-each-season" class="nav-link">Efficiency in Each Season</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generation-and-consumption-seasonal-trends" class="nav-link">Generation and Consumption Seasonal Trends</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#efficiency-trends-in-region" class="nav-link">Efficiency Trends in Region</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#regional-efficiency-table" class="nav-link">Regional Efficiency Table</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -216,12 +232,11 @@
 <p><img alt="Overview" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview-dashboard.png?raw=true" /></p>
 <p>This document provides an overview of the <strong>Energy Overview Dashboard</strong> designed to visualize energy generation, consumption, and efficiency trends across various U.S. states and regions. The dashboard uses multiple Power BI components to deliver insights on energy metrics such as generation, consumption, efficiency rates, and seasonal trends, helping stakeholders make informed decisions.</p>
 <hr />
-<h2 id="slicers"><strong>Slicers</strong></h2>
-<h3 id="1-yearmonth-slicer">1. <strong>Year/Month Slicer</strong></h3>
+<h2 id="yearmonth-slicer"><strong>Year/Month Slicer</strong></h2>
 <p><img alt="Year month slicer" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/year%20slicer.png?raw=true" /></p>
 <p>Enables the selection of a specific date range, allowing users to filter data for any date between 2019 and 2024.</p>
 <hr />
-<h3 id="2-region-slicer">2. <strong>Region Slicer</strong></h3>
+<h2 id="region-slicer"><strong>Region Slicer</strong></h2>
 <p><img alt="Region" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/region%20slice.png?raw=true" /></p>
 <p>Allows users to filter data by region, making it easier to view energy metrics for specific areas across the U.S. These regions include:</p>
 <ul>
@@ -240,21 +255,20 @@
 <li>Texas</li>
 </ul>
 <hr />
-<h2 id="cards"><strong>Cards</strong></h2>
-<h3 id="1-generation-mwh"><strong>1. Generation (MWh)</strong></h3>
+<h2 id="generation-mwh"><strong>Generation (MWh)</strong></h2>
 <p><img alt="Generation" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/total%20generation.png?raw=true" /></p>
 <p>Displays the total energy generated in megawatt-hours (MWh) for the selected period.</p>
 <hr />
-<h3 id="2-consumption-mwh"><strong>2. Consumption (MWh)</strong></h3>
+<h2 id="consumption-mwh"><strong>Consumption (MWh)</strong></h2>
 <p><img alt="Consumption" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/total%20consumption.png?raw=true" /></p>
 <p>Shows the total energy consumed within the selected timeframe.</p>
 <hr />
-<h3 id="3-average-efficiency"><strong>3. Average Efficiency (%)</strong></h3>
+<h2 id="average-efficiency"><strong>Average Efficiency (%)</strong></h2>
 <p><img alt="Efficiency" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/efficiency.png?raw=true" /></p>
 <p>Indicates the average efficiency percentage, reflecting the balance between energy generated and consumed.<br />
 <strong>Efficiency</strong> = (Generation / Consumption) * 100</p>
 <hr />
-<h3 id="4-efficiency-scale"><strong>4. Efficiency Scale</strong></h3>
+<h2 id="efficiency-scale"><strong>Efficiency Scale</strong></h2>
 <p><img alt="Efficiency scale" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/efficiency%20scale.png?raw=true" /></p>
 <p>Gives us an idea about how the region is performing:
 - <strong>0% - 30%</strong>: Generation is way more than consumption, making it an exporter region.
@@ -263,8 +277,7 @@
 - <strong>70% - 100%</strong>: Generation is slightly higher than consumption, so the region will likely export to neighboring areas.
 - <strong>100%+</strong>: Consumption is higher, meaning electricity is imported in such regions.</p>
 <hr />
-<h2 id="line-chart"><strong>Line Chart</strong></h2>
-<h3 id="generation-and-consumption-trend"><strong>Generation and Consumption Trend</strong></h3>
+<h2 id="generation-and-consumption-trend"><strong>Generation and Consumption Trend</strong></h2>
 <p><img alt="Trend" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20line%20chart.png?raw=true" /></p>
 <p>A line chart that shows the month-by-month trend of energy generation and consumption. This chart helps identify patterns or fluctuations in energy usage and production over the year.</p>
 <p><strong>Trend Analysis:</strong>
@@ -272,8 +285,7 @@
 - A gradual decline follows in the autumn and winter months as temperatures cool and energy demands decrease.
 - This seasonal pattern suggests a direct relationship between weather conditions and energy demand. Higher generation in summer aligns with increased consumption, reflecting efforts to meet higher power needs during warmer months.</p>
 <hr />
-<h2 id="area-chart"><strong>Area Chart</strong></h2>
-<h3 id="efficiency-in-each-season"><strong>Efficiency in Each Season</strong></h3>
+<h2 id="efficiency-in-each-season"><strong>Efficiency in Each Season</strong></h2>
 <p><img alt="Area" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20area%20chart.png?raw=true" /></p>
 <p>An area chart displaying seasonal efficiency trends, with separate sections for spring, summer, winter, and autumn. This chart helps users see how efficiency varies with seasons.</p>
 <p><strong>Trend Analysis:</strong>
@@ -281,8 +293,7 @@
 - The drop in efficiency during winter and summer may be due to energy losses associated with extreme temperatures, which can impact generation systems and lead to inefficiencies in power use.
 - These efficiency variations can be critical for planning resource allocation, as lower efficiency during extreme seasons (winter and summer) may require more generation to meet the same level of demand.</p>
 <hr />
-<h2 id="bar-chart"><strong>Bar Chart</strong></h2>
-<h3 id="generation-and-consumption-seasonal-trends"><strong>Generation and Consumption Seasonal Trends</strong></h3>
+<h2 id="generation-and-consumption-seasonal-trends"><strong>Generation and Consumption Seasonal Trends</strong></h2>
 <p><img alt="Bar" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20bar%20chart.png?raw=true" /></p>
 <p>A bar chart comparing energy generation and consumption across different seasons. This visualization is essential for understanding seasonal demands and supply trends.</p>
 <p><strong>Trend Analysis:</strong>
@@ -290,8 +301,7 @@
 - In spring and autumn, both generation and consumption are relatively lower, reflecting milder weather and less extreme energy usage.
 - This pattern suggests that energy providers can optimize their operations by preparing for peak demand periods in summer and winter. Managing resources more effectively during these times could improve efficiency and reduce potential energy shortages.</p>
 <hr />
-<h2 id="map"><strong>Map</strong></h2>
-<h3 id="efficiency-trends-in-region"><strong>Efficiency Trends in Region</strong></h3>
+<h2 id="efficiency-trends-in-region"><strong>Efficiency Trends in Region</strong></h2>
 <p><img alt="Map" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20map.png?raw=true" /></p>
 <p>A geographic map of the U.S. showing energy efficiency percentages by region. States are color-coded based on efficiency levels, providing a visual comparison across regions.</p>
 <ul>
@@ -303,8 +313,7 @@
 - By visually distinguishing efficiency levels across regions, this map helps stakeholders identify high-performing areas and those that may benefit from improvements in energy infrastructure or conservation efforts.
 - It also highlights regional differences that may stem from varying climatic conditions, population density, or energy infrastructure maturity.</p>
 <hr />
-<h2 id="table"><strong>Table</strong></h2>
-<h3 id="regional-efficiency-table"><strong>Regional Efficiency Table</strong></h3>
+<h2 id="regional-efficiency-table"><strong>Regional Efficiency Table</strong></h2>
 <p><img alt="Table" src="https://github.com/tanishq-h/repo/blob/b2/images/overview/overview%20tab;le.png?raw=true" /></p>
 <p>A table with columns for regions and efficiency percentages. This section breaks down efficiency at a more granular level, helping users identify which regions perform better in energy usage. This table is sorted in ascending order of efficiency.</p>
 <hr />
