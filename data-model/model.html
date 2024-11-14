@@ -820,7 +820,7 @@
     hourly_generation_by_energy_source_daily_interval ||--o| generation_consumption_by_region : "Joins hourly generation with consumption data"
     electricity_sale_to_customer_raw ||--o| electricity_sale_to_cust_month : "Transforms raw sales data into monthly sales data"
     electricity_sale_to_cust_month ||--o| generation_consumption_by_region : "Joins sales data with generation and consumption data"
-    region_elevation_mapping ||--o| hourly_generation_by_energy_source_daily_interval : "Links elevation data to generation data"
+    region_elevation_mapping ||--o| hourly_generation_by_energy_source: "Links elevation data to generation data"
 
 </div>
 <hr/>
